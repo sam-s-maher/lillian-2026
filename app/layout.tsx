@@ -1,5 +1,7 @@
-import Link from "next/link";
 import React from "react";
+import Header from "./header";
+import Hero from "./hero";
+import Navigation from "./navigation";
 
 export default function RootLayout({
   children,
@@ -8,17 +10,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        style={{
-          margin: "3rem",
-        }}
-      >
-        <header>
-          <Link href="/">Home</Link>
-          {" | "}
-          <Link href="/posts">Posts</Link>
-        </header>
+      <body>
+        <Header />
+        <Hero />
         <main>{children}</main>
+        <Navigation />
       </body>
     </html>
   );
