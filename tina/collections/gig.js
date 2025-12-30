@@ -30,5 +30,5 @@ export default {
       label: "Tickets",
       name: "tickets",
     },
-  ]
+  ],
 };
