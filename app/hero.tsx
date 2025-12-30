@@ -1,7 +1,15 @@
-export default async function Page() {
+import Image from 'next/image'
+
+export default function Hero() {
   return (
-    <>
-      IMAGE
-    </>
+    <div className="w-full h-[70vh] lg:h-full relative">
+      <Image
+        src="/images/rk_edited.jpg"
+        alt="Hero image"
+        fill
+        style={{ objectFit: 'cover', objectPosition: 'top' }}
+        priority
+      />
+    </div>
   );
 }

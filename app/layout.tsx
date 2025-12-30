@@ -13,11 +13,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col items-center mx-4 min-h-screen">
-        <Header />
-        <Navigation />
-        <Hero />
-        <main className="w-full flex-1 flex flex-col items-center">
+      <body className="flex flex-col items-center m-3 lg:m-5">
+        <div className="w-full lg:h-screen">
+          <div className="flex flex-col lg:h-screen lg:flex-row">
+            <div className="w-full lg:w-1/2 flex flex-col items-center">
+              <Header />
+              <Navigation />
+            </div>
+            <div className="w-full lg:w-1/2 h-full">
+              <Hero />
+            </div>
+          </div>
+        </div>
+        <main className="w-full flex-1 flex flex-col items-center mt-12">
           {children}
         </main>
         <Footer />

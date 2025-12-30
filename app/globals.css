@@ -2,14 +2,21 @@
 
 :root {
   --dark-green: #4F5B45;
-  --theme-white: #FFFFFF;
-  --theme-black: #000000;
+  --off-white: #F1F1F1;
 
-  --primary-text: var(--theme-black);
-  --secondary-text: var(--theme-white);
+  --primary-text: black;
+  --secondary-text: white;
 
-  --primary-background: var(--theme-white);
+  --primary-background: var(--off-white);
   --secondary-background: var(--dark-green);
+
+  --bottom-navigation-height: 3rem;
+}
+
+@font-face {
+  font-family: 'JejuMyeongjo-Regular';
+  src: url('https://www.wfonts.com/data/2016/05/04/jejumyeongjo/JejuMyeongjo-Regular.ttf') format('ttf');
+  font-display: optional;
 }
 
 html,
@@ -17,4 +24,5 @@ body {
   height: 100%;
   color: var(--primary-text);
   background-color: var(--primary-background);
+  font-family: 'JejuMyeongjo-Regular', serif;
 }
