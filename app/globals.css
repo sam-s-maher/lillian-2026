@@ -26,3 +26,7 @@ body {
   background-color: var(--primary-background);
   font-family: 'JejuMyeongjo-Regular', serif;
 }
+
+a:hover {
+  text-decoration: underline;
+}

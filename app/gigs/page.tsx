@@ -23,8 +23,15 @@ export default async function Page() {
             </div>
             {gig.node.tickets ? (
               <div className="flex gap-1 whitespace-nowrap min-w-0 overflow-hidden text-ellipsis">
-                  <a href={gig.node.tickets} target="_blank" rel="noopener noreferrer" className="uppercase">{gig.node.location}</a>
-                  <a href={gig.node.tickets} target="_blank" rel="noopener noreferrer" className="font-bold">{gig.node.venue}</a>
+                <a
+                  href={gig.node.tickets}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-1"
+                >
+                  <span className="uppercase">{gig.node.location}</span>
+                  <span className="font-bold">{gig.node.venue}</span>
+                </a>
               </div>
             ) : (
               <div className="flex gap-1 whitespace-nowrap min-w-0 overflow-hidden text-ellipsis">

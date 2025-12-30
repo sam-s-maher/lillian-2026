@@ -8,22 +8,26 @@ export default function BottomNavigation() {
 
   return (
     <>
-      {open && (
-        <div
-          className="fixed inset-0 flex flex-col items-center justify-center z-40"
-          style={{
-            background: "var(--secondary-background)",
-            color: "var(--secondary-text)",
-          }}
-        >
-          <Link href="/">Gigs</Link>
-          <Link href="/">Projects</Link>
-          <Link href="/">Catalogue</Link>
-          <Link href="/">Reviews</Link>
-          <Link href="/">Contact</Link>
-          <Link href="/">About</Link>
-        </div>
-      )}
+      <div
+        className={
+            `fixed inset-0 flex flex-col items-start justify-end z-40 text-xl gap-4 p-10 transition-all duration-200 ease-out
+            ${
+                open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+            }`
+        }
+        style={{
+          marginBottom: "var(--bottom-navigation-height)",
+          background: "var(--secondary-background)",
+          color: "var(--secondary-text)",
+        }}
+      >
+        <Link href="/">Gigs</Link>
+        <Link className="pt-6" href="/">Projects</Link>
+        <Link href="/">Catalogue</Link>
+        <Link href="/">Reviews</Link>
+        <Link className="pt-6" href="/">Contact</Link>
+        <Link href="/">About</Link>
+      </div>
       <nav
         className="fixed left-0 right-0 bottom-0 z-50 px-4 py-2 flex justify-between items-center"
         style={{
