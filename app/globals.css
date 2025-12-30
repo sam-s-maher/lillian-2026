@@ -10,6 +10,7 @@
   --primary-background: var(--off-white);
   --secondary-background: var(--dark-green);
 
+  --header-height: 5rem;
   --bottom-page-navigator-height: 1.5rem;
   --bottom-navigation-height: 3rem;
 }
@@ -30,4 +31,8 @@ body {
 
 a:hover {
   text-decoration: underline;
+}
+
+.section {
+  scroll-margin-top: calc(var(--header-height) + 2rem);
 }

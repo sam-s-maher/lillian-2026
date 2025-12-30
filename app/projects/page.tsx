@@ -13,7 +13,9 @@ export default async function Page() {
 
   return (
     <>
-      <div className="flex flex-col gap-4 items-center w-full">
+      <div
+        id="projects-section"
+        className="section flex flex-col gap-4 items-center w-full">
         {sortedProjects.map((project) => (
           <div key={project.node.id} className="flex flex-col items-center max-w-full gap-0.5">
             <div className="relative h-[11rem] lg:h-[18rem] w-full overflow-hidden">

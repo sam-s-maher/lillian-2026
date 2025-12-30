@@ -11,8 +11,9 @@ export default function BottomNavigation() {
   return (
     <>
       <div
+        onClick={() => setOpen(false)}
         className={
-            `fixed inset-0 flex flex-col items-start justify-end z-40 text-xl gap-4 p-10 transition-all duration-200 ease-out
+            `lg:hidden fixed inset-0 flex flex-col items-start justify-end z-40 text-xl gap-4 p-10 transition-all duration-200 ease-out
             ${
               open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
             }`
@@ -23,15 +24,17 @@ export default function BottomNavigation() {
           color: "var(--secondary-text)",
         }}
       >
-        <Link href="/">Gigs</Link>
-        <Link className="pt-6" href="/">Projects</Link>
-        <Link href="/">Catalogue</Link>
-        <Link href="/">Reviews</Link>
-        <Link className="pt-6" href="/">Contact</Link>
-        <Link href="/">About</Link>
+        
+        <Link href="#gigs-section" >Gigs</Link>
+        <Link className="pt-6" href="#projects-section">Projects</Link>
+        <Link href="#catalogue-section">Catalogue</Link>
+        <Link href="#reviews-section">Reviews</Link>
+        <Link className="pt-6" href="#contact-section">Contact</Link>
+        <Link href="#about-section">About</Link>
       </div>
       <nav
-        className="fixed z-50 left-0 right-0 bottom-0 flex flex-col items-center"
+        className="
+        fixed z-50 left-0 right-0 bottom-0 flex flex-col items-center"
         style={{
           background: open ? "var(--secondary-background)" : "var(--primary-background)",
           color: open ? "var(--secondary-text)" : "var(--primary-text)",
@@ -65,6 +68,7 @@ export default function BottomNavigation() {
               rel="noopener noreferrer"
               aria-label="Bandcamp"
               className="flex items-center"
+              onClick={() => setOpen(false)}
             >
               <img
                 src="/images/bandcamp_black.png"
@@ -78,6 +82,7 @@ export default function BottomNavigation() {
               rel="noopener noreferrer"
               aria-label="Instagram"
               className="flex items-center"
+              onClick={() => setOpen(false)}
             >
               <span className="inline-flex items-center justify-center rounded-full bg-black h-7 w-7">
                 <img

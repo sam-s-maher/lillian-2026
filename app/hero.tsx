@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <div className="w-full h-[70vh] lg:h-full relative">
+    <div className="w-full h-[55vh] relative">
       <Image
         src="/images/rk_edited.jpg"
         alt="Hero image"

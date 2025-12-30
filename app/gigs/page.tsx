@@ -1,7 +1,13 @@
 import { client } from "../../tina/__generated__/client";
 
 function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-AU");
+  const date = new Date(dateString);
+
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+
+  return `${day}/${month}/${year}`;
 }
 
 export default async function Page() {
@@ -24,14 +30,16 @@ export default async function Page() {
 
   return (
     <>
-      <div className="flex flex-col gap-3 items-center w-full px-4 md:text-xl">
+      <div
+        id="gigs-section"
+        className="section flex flex-col gap-3 items-center w-full px-4 md:text-xl">
         {sortedGigs.map((gig) => (
           <div key={gig.node.id} className="flex items-center max-w-full">
             <div className="whitespace-nowrap min-w-0 overflow-hidden text-ellipsis">
               {formatDate(gig.node.when)}
             </div>
             <div className="grow shrink basis-0 max-w-[20%] min-w-0 overflow-hidden text-ellipsis whitespace-nowrap select-none">
-              .........
+              ...............
             </div>
             {gig.node.tickets ? (
               <div className="flex gap-1 whitespace-nowrap min-w-0 overflow-hidden text-ellipsis">

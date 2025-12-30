@@ -3,7 +3,8 @@ import './globals.css';
 import React from "react";
 import Header from "./header";
 import Hero from "./hero";
-import Navigation from "./navigation";
+import SidebarNavigation from "./sidebar-navigation";
+import BottomNavigation from "./bottom-navigation";
 import Footer from "./footer";
 
 export default function RootLayout({
@@ -13,21 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col items-center m-3 lg:m-5">
-        <div className="w-full lg:h-screen">
-          <div className="flex flex-col lg:h-screen lg:flex-row">
-            <div className="w-full lg:w-1/2 flex flex-col items-center">
-              <Header />
-              <Navigation />
-            </div>
-            <div className="w-full lg:w-1/2 h-full">
-              <Hero />
-            </div>
-          </div>
-        </div>
+      <body className="w-full px-3 lg:px-5">
+        <Header />
+        <SidebarNavigation />
+        <Hero />
         <main className="w-full flex-1 flex flex-col items-center py-12 gap-16">
           {children}
         </main>
+        <BottomNavigation />
         <Footer />
       </body>
     </html>

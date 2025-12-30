@@ -3,7 +3,7 @@ import Link from "next/link";
 export default async function Page() {
   return (
     <>
-      <nav>
+      <nav className="hidden lg:block">
         <Link href="/">Gigs</Link>
         <br />
         <Link href="/">Projects</Link>
