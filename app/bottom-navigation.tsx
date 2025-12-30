@@ -3,20 +3,24 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+
 import PageNavigator from "./page-navigator";
+import { useSection } from "./section-observer";
 
 export default function BottomNavigation() {
   const [open, setOpen] = useState(false);
+  const { current } = useSection();
+
+  const isActive = (id: string) => id === current.id;
 
   return (
     <>
       <div
         onClick={() => setOpen(false)}
         className={
-            `lg:hidden fixed inset-0 flex flex-col items-start justify-end z-40 text-xl gap-4 p-10 transition-all duration-200 ease-out
-            ${
-              open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
-            }`
+          `lg:hidden fixed inset-0 flex flex-col items-start justify-end z-40 text-xl gap-4 p-10 transition-all duration-200 ease-out
+          ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}
+          `
         }
         style={{
           marginBottom: "var(--bottom-navigation-height)",
@@ -24,13 +28,12 @@ export default function BottomNavigation() {
           color: "var(--secondary-text)",
         }}
       >
-        
-        <Link href="#gigs-section" >Gigs</Link>
-        <Link className="pt-6" href="#projects-section">Projects</Link>
-        <Link href="#catalogue-section">Catalogue</Link>
-        <Link href="#reviews-section">Reviews</Link>
-        <Link className="pt-6" href="#contact-section">Contact</Link>
-        <Link href="#about-section">About</Link>
+        <Link href="#gigs-section" className={isActive("gigs-section") ? "active" : undefined}>Gigs</Link>
+        <Link href="#projects-section" className={`pt-6 ${isActive("projects-section") ? "active" : undefined}`}>Projects</Link>
+        <Link href="#catalogue-section" className={isActive("catalogue-section") ? "active" : undefined}>Catalogue</Link>
+        <Link href="#reviews-section" className={isActive("reviews-section") ? "active" : undefined}>Reviews</Link>
+        <Link href="#contact-section" className={`pt-6 ${isActive("contact-section") ? "active" : undefined}`}>Contact</Link>
+        <Link href="#about-section" className={isActive("about-section") ? "active" : undefined}>About</Link>
       </div>
       <nav
         className="
@@ -40,7 +43,7 @@ export default function BottomNavigation() {
           color: open ? "var(--secondary-text)" : "var(--primary-text)",
         }}
       >
-        <PageNavigator  />
+        <PageNavigator />
         <div
           className="px-4 py-2 flex flex-row justify-between items-center w-full"
           style={{ height: "var(--bottom-navigation-height)" }}
