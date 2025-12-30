@@ -16,15 +16,14 @@ export default async function Page() {
       <div className="flex flex-col gap-4 items-center w-full">
         {sortedProjects.map((project) => (
           <div key={project.node.id} className="flex flex-col items-center max-w-full gap-0.5">
-            <div className="h-[186px] max-h-[11rem] relative w-full overflow-hidden">
-                <Image
-                  src={project.node.hero_image}
-                  alt={project.node.title}
-                  width={500}
-                  height={186}
-                  style={{ objectFit: 'contain', objectPosition: 'center' }}
-                  priority
-                />
+            <div className="relative h-[11rem] lg:h-[18rem] w-full overflow-hidden">
+              <Image
+                src={project.node.hero_image}
+                alt={project.node.title}
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                priority
+              />
             </div>
             <div className="flex flex-row justify-between items-center w-full">
               <div className="uppercase underline underline-offset-4 decoration-[1px]">{project.node.title}</div>

@@ -10,6 +10,7 @@
   --primary-background: var(--off-white);
   --secondary-background: var(--dark-green);
 
+  --bottom-page-navigator-height: 1.5rem;
   --bottom-navigation-height: 3rem;
 }
 
