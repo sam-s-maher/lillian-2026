@@ -27,7 +27,7 @@ export default async function Page() {
                 />
             </div>
             <div className="flex flex-row justify-between items-center w-full">
-              <div className="text-xl uppercase underline underline-offset-4 decoration-[1px]">{project.node.title}</div>
+              <div className="uppercase underline underline-offset-4 decoration-[1px]">{project.node.title}</div>
               <div className="flex flex-row gap-7 text-sm">
                 <a 
                   href={project.node.instagram_link}
@@ -43,7 +43,7 @@ export default async function Page() {
                 </a>
               </div>
             </div>
-            <div className="py-2 px-4 text-center">
+            <div className="py-2 px-4 text-sm text-center">
               <p className="leading-tight">{project.node.bio}</p>
             </div>
           </div>
