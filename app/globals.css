@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
+:root {
+  --dark-green: #4F5B45;
+  --theme-white: #FFFFFF;
+  --theme-black: #000000;
+
+  --primary-text: var(--theme-black);
+  --secondary-text: var(--theme-white);
+
+  --primary-background: var(--theme-white);
+  --secondary-background: var(--dark-green);
+}
+
 html,
 body {
   height: 100%;
+  color: var(--primary-text);
+  background-color: var(--primary-background);
 }
