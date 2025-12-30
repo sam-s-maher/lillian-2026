@@ -1,7 +1,7 @@
 export default async function Page() {
   return (
     <>
-      <footer>
+      <footer style={{ paddingBottom: 'var(--bottom-navigation-height)' }}>
         Footer
       </footer>
     </>

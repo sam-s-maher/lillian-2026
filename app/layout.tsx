@@ -25,7 +25,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <main className="w-full flex-1 flex flex-col items-center mt-12">
+        <main className="w-full flex-1 flex flex-col items-center py-12 gap-16">
           {children}
         </main>
         <Footer />

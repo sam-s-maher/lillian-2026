@@ -1,5 +1,6 @@
 import { defineConfig } from "tinacms";
 import gig from "./collections/gig";
+import project from "./collections/project";
 
 export const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -25,7 +26,7 @@ export const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [gig],
+    collections: [gig, project],
   },
 });
 
