@@ -36,11 +36,11 @@ export default function BottomNavigation() {
         <Link href="#about-section" className={isActive("about-section") ? "active" : undefined}>About</Link>
       </div>
       <nav
-        className="
-        fixed z-50 left-0 right-0 bottom-0 flex flex-col items-center"
+        className="block lg:hidden fixed z-50 left-0 right-0 bottom-0 flex flex-col items-center shadow-sm"
         style={{
           background: open ? "var(--secondary-background)" : "var(--primary-background)",
           color: open ? "var(--secondary-text)" : "var(--primary-text)",
+          boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.02)'
         }}
       >
         <PageNavigator />
