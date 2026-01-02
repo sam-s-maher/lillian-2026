@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-
 import PageNavigator from "./page-navigator";
 import { useSection } from "./section-observer";
 
@@ -18,7 +17,7 @@ export default function BottomNavigation() {
       <div
         onClick={() => setOpen(false)}
         className={
-          `lg:hidden fixed inset-0 flex flex-col items-start justify-end z-40 text-xl gap-4 p-10 transition-all duration-200 ease-out
+          `secondary-colours lg:hidden fixed inset-0 flex flex-col items-start justify-end z-50 text-xl gap-4 p-10 transition-all duration-200 ease-out
           ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}
           `
         }
@@ -36,17 +35,19 @@ export default function BottomNavigation() {
         <Link href="#about-section" className={isActive("about-section") ? "active" : undefined}>About</Link>
       </div>
       <nav
-        className="block lg:hidden fixed z-50 left-0 right-0 bottom-0 flex flex-col items-center shadow-sm"
+        className="lg:hidden fixed z-40 left-0 right-0 bottom-0 flex flex-col items-center shadow-sm"
         style={{
           background: open ? "var(--secondary-background)" : "var(--primary-background)",
-          color: open ? "var(--secondary-text)" : "var(--primary-text)",
           boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.02)'
         }}
       >
         <PageNavigator />
         <div
           className="px-4 py-2 flex flex-row justify-between items-center w-full"
-          style={{ height: "var(--bottom-navigation-height)" }}
+          style={{
+            height: "var(--bottom-navigation-height)",
+            color: open ? "var(--secondary-text)" : "var(--primary-text)",
+          }}
         >
           <button
             aria-label={open ? "Close navigation menu" : "Open navigation menu"}

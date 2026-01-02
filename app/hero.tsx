@@ -2,8 +2,9 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <div className="w-full h-[55vh] relative">
+    <div className="relative w-full h-[55vh] lg:w-1/2 lg:h-screen">
       <Image
+        className="lg:py-5"
         src="/images/rk_edited.jpg"
         alt="Hero image"
         fill

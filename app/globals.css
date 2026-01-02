@@ -10,9 +10,15 @@
   --primary-background: var(--off-white);
   --secondary-background: var(--dark-green);
 
+  --primary-accent: var(--dark-green);
+  --secondary-accent: var(--off-white);
+
   --header-height: 5rem;
   --bottom-page-navigator-height: 1.5rem;
   --bottom-navigation-height: 3rem;
+
+  --underline-fade-duration: 0.15s;
+  --label-fade-duration: 0.3s;
 }
 
 @font-face {
@@ -27,13 +33,54 @@ body {
   color: var(--primary-text);
   background-color: var(--primary-background);
   font-family: 'JejuMyeongjo-Regular', serif;
+  scroll-behavior: smooth;
+}
+
+
+@keyframes primary-underline-fade-in {
+  from {
+    text-decoration-color: transparent;
+  }
+  to {
+    text-decoration-color: var(--primary-accent);
+  }
+}
+
+@keyframes secondary-underline-fade-in{
+  from {
+    text-decoration-color: transparent;
+  }
+  to {
+    text-decoration-color: var(--secondary-accent);
+  }
+}
+
+@keyframes label-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 a:hover, a.active {
   text-decoration: underline;
-  text-decoration-color: var(--dark-green);
+  text-decoration-color: var(--primary-accent);
+  text-underline-offset: 2px;
+  animation: primary-underline-fade-in var(--underline-fade-duration) ease-in;
+}
+
+
+.secondary-colours a:hover, .secondary-colours a.active {
+  text-decoration-color: var(--secondary-accent);
+  animation: secondary-underline-fade-in var(--underline-fade-duration) ease-in;
 }
 
 .section {
   scroll-margin-top: calc(var(--header-height) + 2rem);
+}
+
+.label-fade {
+  animation: label-fade-in var(--label-fade-duration) ease-in;
 }
