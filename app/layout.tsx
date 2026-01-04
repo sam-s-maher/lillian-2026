@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="w-full px-3 lg:px-5">
+      <body className="w-full px-4 lg:px-5">
         <div className="flex flex-col justify-center lg:flex-row lg:flex-wrap">
           <SectionObserver>
             <SidebarNavigation />
@@ -23,7 +23,7 @@ export default function RootLayout({
           </SectionObserver>
           <Header />
           <Hero />
-          <main className="w-full lg:w-3/4 flex flex-col items-center justify-center py-12 gap-16">
+          <main className="w-full lg:w-[80%] flex flex-col items-center justify-center py-12 gap-16">
             {children}
           </main>
           <Footer />

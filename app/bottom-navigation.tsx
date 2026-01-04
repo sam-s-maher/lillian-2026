@@ -35,10 +35,9 @@ export default function BottomNavigation() {
         <Link href="#about-section" className={isActive("about-section") ? "active" : undefined}>About</Link>
       </div>
       <nav
-        className="lg:hidden fixed z-40 left-0 right-0 bottom-0 flex flex-col items-center shadow-sm"
+        className="lg:hidden fixed z-40 left-0 right-0 bottom-0 flex flex-col items-center shadow-subtle"
         style={{
-          background: open ? "var(--secondary-background)" : "var(--primary-background)",
-          boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.02)'
+          background: open ? "var(--secondary-background)" : "var(--primary-background)"
         }}
       >
         <PageNavigator />
@@ -54,7 +53,6 @@ export default function BottomNavigation() {
             onClick={() => setOpen((v) => !v)}
             className="bg-transparent border-none text-2xl cursor-pointer focus:outline-none focus:ring-0 active:shadow-none shadow-none"
             style={{
-              boxShadow: "none",
               color: open ? "var(--secondary-text)" : "var(--primary-text)"
             }}
           >
