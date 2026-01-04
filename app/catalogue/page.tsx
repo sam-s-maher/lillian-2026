@@ -16,8 +16,8 @@ export default async function Page() {
   const catalogue = await client.queries.catalogueConnection();
 
   const sortedCatalogue = (catalogue.data.catalogueConnection?.edges ?? []).slice().sort((a, b) => {
-    const orderA = a.node.order ?? 0;
-    const orderB = b.node.order ?? 0;
+    const orderA = a?.node?.order ?? 0;
+    const orderB = b?.node?.order ?? 0;
     return orderA - orderB;
   });
 

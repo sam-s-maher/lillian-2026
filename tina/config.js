@@ -3,6 +3,7 @@ import gig from "./collections/gig";
 import project from "./collections/project";
 import catalogue from "./collections/catalogue";
 import about from "./collections/about";
+import reviews from "./collections/reviews";
 
 export const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -28,7 +29,7 @@ export const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [gig, project, catalogue, about],
+    collections: [gig, project, catalogue, about, reviews],
   },
 });
 

@@ -34,7 +34,7 @@ export default async function Page() {
             />
           </div>
         </div>
-        <div className="w-1/2 mt-16">
+        <div className="w-1/2 mt-12">
           <TinaMarkdown content={about.description} />
         </div>
       </div>
