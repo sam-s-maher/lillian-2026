@@ -21,8 +21,8 @@ export default {
       label: "When",
       name: "when",
       ui: {
-        dateFormat: 'MM/DD/YYYY',
-        parse: (value) => value && value.format('MM/DD/YYYY'),
+        dateFormat: 'DD/MM/YYYY',
+        parse: (value) => value && value.format('DD/MM/YYYY'),
       },
     },
     {
