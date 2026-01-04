@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useSection } from "./section-observer";
 
@@ -25,12 +26,13 @@ export default function Page() {
               rel="noopener noreferrer"
               aria-label="Bandcamp"
               className="flex items-center"
-              onClick={() => setOpen(false)}
             >
-              <img
+              <Image
                 src="/images/bandcamp_black.png"
                 alt="Bandcamp"
-                className="h-7 w-7 object-contain"
+                width={28}
+                height={28}
+                className="object-contain"
               />
             </a>
             <a
@@ -39,13 +41,14 @@ export default function Page() {
               rel="noopener noreferrer"
               aria-label="Instagram"
               className="flex items-center"
-              onClick={() => setOpen(false)}
             >
               <span className="inline-flex items-center justify-center rounded-full bg-black h-7 w-7">
-                <img
+                <Image
                   src="/images/instagram_white.svg"
                   alt="Instagram"
-                  className="h-4 w-4 object-contain"
+                  width={16}
+                  height={16}
+                  className="object-contain"
                 />
               </span>
             </a>

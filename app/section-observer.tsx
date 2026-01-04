@@ -11,8 +11,6 @@ const SECTIONS = [
   { id: "about-section", label: "About" },
 ];
 
-const FIXED_NAVBAR_HEIGHT = 80;
-
 type SectionContextType = {
   current: { id: string; label: string };
 };
