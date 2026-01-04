@@ -35,8 +35,8 @@ export const SectionObserver: React.FC<{ children: React.ReactNode }> = ({ child
     };
 
     const observer = new window.IntersectionObserver(handleIntersect, {
-      threshold: 0.01,
-      rootMargin: `-${FIXED_NAVBAR_HEIGHT}px 0px -80% 0px`,
+      threshold: 0,
+      rootMargin: `-40% 0px -58% 0px`,
     });
 
     SECTIONS.forEach(({ id }) => {
