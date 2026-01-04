@@ -23,7 +23,7 @@ export default function RootLayout({
           </SectionObserver>
           <Header />
           <Hero />
-          <main className="w-full lg:w-[80%] flex flex-col items-center justify-center py-12 gap-16">
+          <main className="w-full lg:w-[65%] max-w-[1440px] flex flex-col items-center justify-center py-12 gap-16">
             {children}
           </main>
           <Footer />

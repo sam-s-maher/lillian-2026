@@ -21,6 +21,12 @@
   --label-fade-duration: 0.3s;
 }
 
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 5rem;
+  }
+}
+
 @font-face {
   font-family: 'JejuMyeongjo-Regular';
   src: url('https://www.wfonts.com/data/2016/05/04/jejumyeongjo/JejuMyeongjo-Regular.ttf') format('ttf');
