@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useSection } from "./section-observer";
+import EnvelopeIcon from "./components/icons/envelope-icon";
 
 export default function Page() {
   const { current } = useSection();
@@ -17,7 +18,15 @@ export default function Page() {
         <Link href="#projects-section" className={`pt-6 ${isActive("projects-section") ? "active" : undefined}`}>Projects</Link>
         <Link href="#catalogue-section" className={isActive("catalogue-section") ? "active" : undefined}>Catalogue</Link>
         <Link href="#reviews-section" className={isActive("reviews-section") ? "active" : undefined}>Reviews</Link>
-        <Link href="#contact-section" className={`pt-6 ${isActive("contact-section") ? "active" : undefined}`}>Contact</Link>
+        <a 
+          href="mailto:albazi.music@gmail.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="pt-6 flex items-center gap-1.5 hover:opacity-70 transition-opacity"
+        >
+          Contact
+          <EnvelopeIcon />
+        </a>
         <Link href="#about-section" className={isActive("about-section") ? "active" : undefined}>About</Link>
         <div className="fixed bottom-10 flex gap-3 items-center">
             <a
