@@ -8,8 +8,8 @@ export default {
   fields: [
     {
       type: "string",
-      label: "Location",
-      name: "location",
+      label: "State",
+      name: "state",
     },
     {
       type: "string",

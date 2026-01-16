@@ -23,13 +23,14 @@ export default async function Page() {
       <div
         id="about-section"
         className="section flex flex-col items-center w-full">
-        <div className="w-1/2">
+        <div className="w-2/5">
           <div className="relative aspect-square w-full overflow-hidden">
             <Image
               src={about.hero_image}
               alt="About"
               fill
               style={{ objectFit: 'cover', objectPosition: 'center' }}
+              className="bordered"
               priority
             />
           </div>

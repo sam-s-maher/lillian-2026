@@ -87,7 +87,7 @@ export default function BottomNavigation() {
               onClick={() => setOpen(false)}
             >
               <Image
-                src="/images/bandcamp_black.png"
+                src="/images/bandcamp.png"
                 alt="Bandcamp"
                 width={28}
                 height={28}
@@ -104,7 +104,7 @@ export default function BottomNavigation() {
             >
               <span className="inline-flex items-center justify-center rounded-full bg-black h-7 w-7">
                 <Image
-                  src="/images/instagram_white.svg"
+                  src="/images/instagram.png"
                   alt="Instagram"
                   width={16}
                   height={16}

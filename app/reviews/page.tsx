@@ -20,7 +20,7 @@ export default async function Page() {
             <div className="text-lg lg:text-xl leading-relaxed text-center">
               <TinaMarkdown content={review.node.review_text} />
             </div>
-            <div className="text-lg lg:text-xl font-medium">
+            <div className="text-lg lg:text-xl font-medium font-helvetica mt-2">
               {review.node.reviewer_name}
             </div>
             {index < sortedReviews.length - 1 && (

@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --dark-green: #4F5B45;
-  --off-white: #F1F1F1;
+  --dark-green: #4F5544;
+  --off-white: #F2F1F1;
+  --light-green: #00ff00;
 
-  --primary-text: black;
-  --secondary-text: white;
+  --primary-text: var(--dark-green);
+  --secondary-text: rgb(25, 24, 24);
 
   --primary-background: var(--off-white);
   --secondary-background: var(--dark-green);
 
   --primary-accent: var(--dark-green);
   --secondary-accent: var(--off-white);
+
+  --primary-highlight: var(--light-green);
+  --secondary-highlight: var(--light-green);
 
   --header-height: 5rem;
   --bottom-page-navigator-height: 1.5rem;
@@ -51,6 +55,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Helvetica', sans-serif;
   font-weight: normal;
+}
+
+img.bordered {
+  border: var(--primary-accent) 2mm solid;
+}
+
+.font-helvetica {
+  font-family: 'Helvetica', sans-serif;
 }
 
 

@@ -31,12 +31,13 @@ export default async function Page() {
         className="section flex flex-col gap-6 items-center w-full">
         {sortedCatalogue.map((item) => (
           <div key={item.node.id} className="flex flex-col items-center w-full gap-0.5">
-            <div className="relative h-[11rem] lg:h-[18rem] w-full overflow-hidden">
+            <div className="relative h-[11rem] lg:h-[34rem] w-full overflow-hidden">
               <Image
                 src={item.node.hero_image}
                 alt={item.node.title}
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
+                className="bordered"
                 priority
               />
             </div>
