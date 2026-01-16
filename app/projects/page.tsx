@@ -15,7 +15,7 @@ export default async function Page() {
     <>
       <div
         id="projects-section"
-        className="section flex flex-col gap-12 items-center w-full">
+        className="section flex flex-col gap-4 lg:gap-12 items-center w-full">
         {sortedProjects.map((project) => (
           <div key={project.node.id} className="flex flex-col items-center w-full gap-0.5">
             <div className="relative h-[11rem] lg:h-[24rem] w-full overflow-hidden">
@@ -28,8 +28,8 @@ export default async function Page() {
                 priority
               />
             </div>
-            <div className="pt-4 flex flex-wrap justify-between items-center lg:items-start w-3/4">
-              <div className="text-xl decoration-[1px] w-1/2 font-helvetica">
+            <div className="pt-1 lg:pt-4 flex flex-wrap justify-between items-center lg:items-start lg:w-3/4">
+              <div className="text-lg lg:text-xl decoration-[1px] w-1/2 font-helvetica">
                 {project.node.title}
               </div>
               <div className="flex gap-7 justify-end text-sm lg:text-lg w-1/2">

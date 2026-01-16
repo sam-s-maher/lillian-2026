@@ -14,18 +14,18 @@ export default async function Page() {
     <>
       <div
         id="reviews-section"
-        className="section flex flex-col items-center w-full px-8 gap-12">
+        className="section flex flex-col items-center w-full lg:px-8 gap-4 lg:gap-12">
         {sortedReviews.map((review, index) => (
           <div key={review.node.id} className="flex flex-col items-center w-full max-w-4xl">
-            <div className="text-lg lg:text-xl leading-relaxed text-center">
+            <div className="lg:text-xl leading-relaxed text-center">
               <TinaMarkdown content={review.node.review_text} />
             </div>
-            <div className="text-lg lg:text-xl font-medium font-helvetica mt-2">
+            <div className="lg:text-xl font-medium font-helvetica mt-2">
               {review.node.reviewer_name}
             </div>
             {index < sortedReviews.length - 1 && (
               <div 
-                className="w-3 h-3 rounded-full mt-6 mb-0"
+                className="w-1 h-1 lg:w-3 lg:h-3 rounded-full mt-2 lg:mt-6 mb-0"
                 style={{ backgroundColor: 'var(--primary-accent)' }}
               />
             )}

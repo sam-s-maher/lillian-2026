@@ -15,7 +15,7 @@ export default function Header({ white = false }: { white?: boolean } = {}) {
   return (
     <>
       <header
-        className={`w-full sticky top-[4mm] z-40 flex items-center
+        className={`w-full sticky top-[7mm] lg:top-[4mm] z-40 flex items-center
                   shadow-subtle bg-transparent lg:shadow-none
                   ${isFirstPage ? 'lg:justify-start' : 'justify-center'}`}
         style={{

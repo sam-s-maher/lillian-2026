@@ -23,7 +23,7 @@ export default async function Page() {
       <div
         id="about-section"
         className="section flex flex-col items-center w-full">
-        <div className="w-2/5">
+        <div className="w-full lg:w-2/5">
           <div className="relative aspect-square w-full overflow-hidden">
             <Image
               src={about.hero_image}
@@ -35,7 +35,7 @@ export default async function Page() {
             />
           </div>
         </div>
-        <div className="w-1/2 mt-12">
+        <div className="w-full lg:w-1/2 mt-6 lg:mt-12">
           <TinaMarkdown content={about.description} />
         </div>
       </div>

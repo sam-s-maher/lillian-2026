@@ -41,13 +41,13 @@ export default async function Page() {
                 priority
               />
             </div>
-            <div className="flex flex-row justify-between items-center w-full">
-              <div className="underline underline-offset-2 decoration-[1px]">
+            <div className="flex flex-row justify-between items-center w-full text-xs lg:text-sm">
+              <div className="underline underline-offset-2 decoration-[1px] font-helvetica">
                 {item.node.title}
               </div>
-              <div className="text-sm flex gap-1">
+              <div className="text-xs lg:text-sm flex gap-1">
                 {item.node.image_credits && (
-                  <span>{item.node.image_credits},</span>
+                  <span className="hidden lg:block">{item.node.image_credits},</span>
                 )}
                 <span>{formatDate(item.node.date)}</span>
               </div>

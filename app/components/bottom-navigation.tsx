@@ -15,7 +15,7 @@ export default function BottomNavigation() {
 
   const isActive = (path: string) => {
     // Handle root path - default to gigs
-    if (pathname === "/" && path === "/gigs") return true;
+    if (path === "/") return true;
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 

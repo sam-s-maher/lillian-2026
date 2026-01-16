@@ -58,7 +58,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 img.bordered {
-  border: var(--primary-accent) 2mm solid;
+  border: var(--primary-accent) 1mm solid;
+}
+
+
+@media (min-width: 1024px) {
+  img.bordered {
+    border: var(--primary-accent) 2mm solid;
+  }
 }
 
 .font-helvetica {
@@ -108,6 +115,7 @@ a:hover, a.active {
 
 .section {
   scroll-margin-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 6rem;
 }
 
 .label-fade {

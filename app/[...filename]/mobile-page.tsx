@@ -6,8 +6,8 @@ export default async function Page() {
   return (
     <>
       <Hero />
-      <div className="pt-12 h-[34vh] flex flex-col justify-between">
-        <div className="flex flex-col">
+      <div className="h-[36vh] flex flex-col justify-end">
+        <div className="flex flex-col pb-10">
           <h1>THE NEXT THREE:</h1>
           <GigPage limit={3} />
         </div>
