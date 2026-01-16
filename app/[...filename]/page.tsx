@@ -4,10 +4,10 @@ import MobilePage from "./mobile-page";
 export default async function Page() {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block w-full">
         <DesktopPage />
       </div>
-      <div className="block lg:hidden">
+      <div className="relative top-[-10mm] block lg:hidden w-full">
         <MobilePage />
       </div>
     </>

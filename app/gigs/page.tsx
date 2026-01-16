@@ -11,7 +11,7 @@ function formatDate(dateString: string) {
   return `${day}/${month}/${year}`;
 }
 
-export default async function Page() {
+export default async function Page({ limit }: { limit?: number } = {}) {
   const gigs = await client.queries.gigConnection();
 
   const today = new Date();
@@ -27,13 +27,14 @@ export default async function Page() {
       const dateA = new Date(a.node.when).getTime();
       const dateB = new Date(b.node.when).getTime();
       return dateA - dateB;
-    });
+    })
+    .slice(0, limit);
 
   return (
     <>
       <div
         id="gigs-section"
-        className="section flex flex-col gap-3 items-center w-full px-4 md:text-2xl">
+        className="section flex flex-col gap-1 lg:gap-3 items-center w-full lg:px-4 md:text-2xl">
         {sortedGigs.map((gig) => (
           <div key={gig.node.id} className="flex items-center w-full">
             <div className="whitespace-nowrap flex-shrink-0">

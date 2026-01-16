@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 import PageNavigator from "./page-navigator";
 import EnvelopeIcon from "./icons/envelope-icon";
+import Header from "./header";
 
 export default function BottomNavigation() {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function BottomNavigation() {
       <div
         onClick={() => setOpen(false)}
         className={
-          `secondary-colours lg:hidden fixed inset-0 flex flex-col items-start justify-end z-50 text-xl gap-4 p-10 transition-all duration-200 ease-out
+          `secondary-colours lg:hidden fixed inset-0 flex flex-col items-start justify-start z-50 text-xl gap-50 p-10 transition-all duration-200 ease-out
           ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}
           `
         }
@@ -33,20 +34,23 @@ export default function BottomNavigation() {
           color: "var(--secondary-text)",
         }}
       >
-        <Link href="/gigs" className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
-        <Link href="/projects" className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
-        <Link href="/catalogue" className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>
-        <Link href="/reviews" className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
-        <Link href="/about" className={isActive("/about") ? "active" : undefined}>About</Link>
-        <a 
-          href="mailto:albazi.music@gmail.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="pt-6 flex items-center gap-1.5 hover:opacity-70 transition-opacity"
-        >
-          Contact
-          <EnvelopeIcon />
-        </a>
+        <Header white={true} />
+        <div className="relative flex flex-col items-start justify-center gap-2">
+          <Link href="/gigs" className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
+          <Link href="/projects" className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
+          <Link href="/catalogue" className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>
+          <Link href="/reviews" className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
+          <Link href="/about" className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
+          <a 
+            href="mailto:albazi.music@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:opacity-70 transition-opacity"
+          >
+            Contact
+            <EnvelopeIcon />
+          </a>
+        </div>
       </div>
       <nav
         className="lg:hidden fixed z-40 left-0 right-0 bottom-0 flex flex-col items-center shadow-subtle"
@@ -77,7 +81,7 @@ export default function BottomNavigation() {
             )}
           </button>
 
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-7 items-center pb-2">
             <a
               href="https://lillianalbazi.bandcamp.com/"
               target="_blank"
@@ -87,10 +91,10 @@ export default function BottomNavigation() {
               onClick={() => setOpen(false)}
             >
               <Image
-                src="/images/bandcamp_black.png"
+                src={open ? "/images/bandcamp_white.png" : "/images/bandcamp.png"}
                 alt="Bandcamp"
-                width={28}
-                height={28}
+                width={30}
+                height={30}
                 className="object-contain"
               />
             </a>
@@ -102,12 +106,12 @@ export default function BottomNavigation() {
               className="flex items-center"
               onClick={() => setOpen(false)}
             >
-              <span className="inline-flex items-center justify-center rounded-full bg-black h-7 w-7">
+              <span className="inline-flex items-center justify-center rounded-full h-7 w-7">
                 <Image
-                  src="/images/instagram_white.svg"
+                  src={open ? "/images/instagram_white.png" : "/images/instagram.png"}
                   alt="Instagram"
-                  width={16}
-                  height={16}
+                  width={36} 
+                  height={36}
                   className="object-contain"
                 />
               </span>

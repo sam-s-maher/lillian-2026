@@ -6,7 +6,7 @@
   --light-green: #00ff00;
 
   --primary-text: var(--dark-green);
-  --secondary-text: rgb(25, 24, 24);
+  --secondary-text: var(--off-white);
 
   --primary-background: var(--off-white);
   --secondary-background: var(--dark-green);

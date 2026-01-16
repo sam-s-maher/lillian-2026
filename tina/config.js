@@ -4,6 +4,7 @@ import project from "./collections/project";
 import catalogue from "./collections/catalogue";
 import about from "./collections/about";
 import reviews from "./collections/reviews";
+import acknowledgement from "./collections/acknowledgement";
 
 export const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -29,7 +30,7 @@ export const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [gig, project, catalogue, about, reviews],
+    collections: [gig, project, catalogue, about, reviews, acknowledgement],
   },
 });
 
