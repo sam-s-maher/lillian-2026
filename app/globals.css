@@ -23,14 +23,20 @@
 
 @media (min-width: 1024px) {
   :root {
-    --header-height: 5rem;
+    --header-height: 6.5rem;
   }
 }
 
 @font-face {
-  font-family: 'JejuMyeongjo-Regular';
-  src: url('https://www.wfonts.com/data/2016/05/04/jejumyeongjo/JejuMyeongjo-Regular.ttf') format('ttf');
-  font-display: optional;
+  font-family: 'LuxuriousRoman';
+  src: url('/fonts/LuxuriousRoman-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica.ttc') format('truetype-collection');
+  font-display: swap;
 }
 
 html,
@@ -38,8 +44,13 @@ body {
   height: 100%;
   color: var(--primary-text);
   background-color: var(--primary-background);
-  font-family: 'JejuMyeongjo-Regular', serif;
+  font-family: 'LuxuriousRoman', serif;
   scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: normal;
 }
 
 

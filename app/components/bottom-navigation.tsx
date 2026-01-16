@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import PageNavigator from "./components/page-navigator";
-import EnvelopeIcon from "./components/icons/envelope-icon";
+import PageNavigator from "./page-navigator";
+import EnvelopeIcon from "./icons/envelope-icon";
 
 export default function BottomNavigation() {
   const [open, setOpen] = useState(false);

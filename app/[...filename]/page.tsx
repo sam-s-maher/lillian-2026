@@ -1,17 +1,15 @@
-import GigPage from "../gigs/page";
-import ProjectPage from "../projects/page";
-import CataloguePage from "../catalogue/page";
-import ReviewsPage from "../reviews/page";
-import AboutPage from "../about/page";
+import DesktopPage from "./desktop-page";
+import MobilePage from "./mobile-page";
 
 export default async function Page() {
   return (
     <>
-      <GigPage />
-      <ProjectPage />
-      <CataloguePage />
-      <ReviewsPage />
-      <AboutPage />
+      <div className="hidden lg:block">
+        <DesktopPage />
+      </div>
+      <div className="block lg:hidden">
+        <MobilePage />
+      </div>
     </>
   );
 }

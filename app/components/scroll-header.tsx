@@ -35,19 +35,26 @@ export default function ScrollHeader() {
     <header
       className={`
         w-full fixed top-0 left-0 right-0 z-50 flex items-center justify-center
-        shadow-subtle transition-all duration-300 ease-out
+        shadow-subtle transition-all duration-300 ease-out bg-transparent
         ${isVisible ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-full opacity-0'}
       `}
       style={{
         height: 'var(--header-height)',
-        background: 'var(--primary-background)'
       }}
     >
       <Image
-        src="/images/logo_lillian_albazi_2.png"
+        src="/images/lillian_logo_mobile.png"
         alt="Lillian Albazi Logo"
         height={45}
         width={220}
+        className="block lg:hidden"
+      />
+      <Image
+        src="/images/lillian_logo_desktop.png"
+        alt="Lillian Albazi Logo"
+        height={45}
+        width={220}
+        className="hidden lg:block"
       />
     </header>
   );

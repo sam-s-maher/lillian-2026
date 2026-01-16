@@ -1,13 +1,9 @@
 import './globals.css';
 
 import React from "react";
-import Header from "./header";
-import ScrollHeader from "./scroll-header";
-import Hero from "./hero";
-import SidebarNavigation from "./sidebar-navigation";
-import BottomNavigation from "./bottom-navigation";
-import Footer from "./footer";
-import { SectionObserver } from './section-observer';
+import Header from "./components/header";
+import SidebarNavigation from "./components/sidebar-navigation";
+import BottomNavigation from "./components/bottom-navigation";
 
 export default function RootLayout({
   children,
@@ -16,19 +12,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="w-full px-4 lg:px-5">
-        <ScrollHeader />
+      <body className="w-full p-[7mm] lg:p-[4mm]">
         <div className="flex flex-col justify-center lg:flex-row lg:flex-wrap">
-          <SectionObserver>
-            <SidebarNavigation />
-            <BottomNavigation />
-          </SectionObserver>
+          <SidebarNavigation />
+          <BottomNavigation />
           <Header />
-          <Hero />
           <main className="w-full lg:w-[65%] max-w-[1440px] flex flex-col items-center justify-center py-12 gap-16">
             {children}
           </main>
-          <Footer />
         </div>
       </body>
     </html>
