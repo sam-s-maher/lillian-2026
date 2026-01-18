@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -13,9 +13,35 @@ import Socials from "./socials";
 export default function BottomNavigation() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 10 && !open) {
+        setOpen(true);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [open, pathname]);
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const openOnScrollAttempt = (e: Event) => {
+      if (!open) setOpen(true);
+    };
+    window.addEventListener('wheel', openOnScrollAttempt, { passive: true });
+    window.addEventListener('touchmove', openOnScrollAttempt, { passive: true });
+    return () => {
+      window.removeEventListener('wheel', openOnScrollAttempt);
+      window.removeEventListener('touchmove', openOnScrollAttempt);
+    };
+  }, [open, pathname]);
 
   const isActive = (path: string) => {
-    // Handle root path - default to gigs
     if (path === "/") return true;
     return pathname === path || pathname.startsWith(`${path}/`);
   };
