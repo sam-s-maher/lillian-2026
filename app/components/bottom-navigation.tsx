@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import PageNavigator from "./page-navigator";
@@ -30,7 +29,7 @@ export default function BottomNavigation() {
 
   useEffect(() => {
     if (pathname !== "/") return;
-    const openOnScrollAttempt = (e: Event) => {
+    const openOnScrollAttempt = () => {
       if (!open) setOpen(true);
     };
     window.addEventListener('wheel', openOnScrollAttempt, { passive: true });

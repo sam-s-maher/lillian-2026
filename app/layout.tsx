@@ -17,7 +17,7 @@ export default function RootLayout({
           <SidebarNavigation />
           <BottomNavigation />
           <Header />
-          <main className="w-full lg:w-[65%] lg:max-w-5xl flex flex-col items-center justify-center pt-8 lg:py-20 gap-16">
+          <main className="w-full lg:w-[65%] lg:max-w-5xl flex flex-col items-center justify-center pt-8 lg:py-10 gap-16">
             {children}
           </main>
         </div>
