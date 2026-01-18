@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import PageNavigator from "./page-navigator";
 import EnvelopeIcon from "./icons/envelope-icon";
 import Header from "./header";
+import Socials from "./socials";
 
 export default function BottomNavigation() {
   const [open, setOpen] = useState(false);
@@ -36,11 +37,11 @@ export default function BottomNavigation() {
       >
         <Header white={true} />
         <div className="relative flex flex-col items-start justify-center gap-2">
-          <Link href="/gigs" className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
-          <Link href="/projects" className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
-          <Link href="/catalogue" className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>
-          <Link href="/reviews" className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
-          <Link href="/about" className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
+          <Link href="/gigs" scroll={true} className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
+          <Link href="/projects" scroll={true} className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
+          <Link href="/catalogue" scroll={true} className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>
+          <Link href="/reviews" scroll={true} className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
+          <Link href="/about" scroll={true} className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
           <a 
             href="mailto:albazi.music@gmail.com" 
             target="_blank" 
@@ -82,40 +83,7 @@ export default function BottomNavigation() {
           </button>
 
           <div className="flex gap-7 items-center pb-2">
-            <a
-              href="https://lillianalbazi.bandcamp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Bandcamp"
-              className="flex items-center"
-              onClick={() => setOpen(false)}
-            >
-              <Image
-                src={open ? "/images/bandcamp_white.png" : "/images/bandcamp.png"}
-                alt="Bandcamp"
-                width={30}
-                height={30}
-                className="object-contain"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/lalbazi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="flex items-center"
-              onClick={() => setOpen(false)}
-            >
-              <span className="inline-flex items-center justify-center rounded-full h-7 w-7">
-                <Image
-                  src={open ? "/images/instagram_white.png" : "/images/instagram.png"}
-                  alt="Instagram"
-                  width={36} 
-                  height={36}
-                  className="object-contain"
-                />
-              </span>
-            </a>
+            <Socials white={open} onClick={() => setOpen(false)} />
           </div>
         </div>
       </nav>

@@ -45,7 +45,8 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--primary-text);
   background-color: var(--primary-background);
   font-family: 'LuxuriousRoman', serif;
@@ -120,4 +121,28 @@ a:hover, a.active {
 
 .label-fade {
   animation: label-fade-in var(--label-fade-duration) ease-in;
+}
+
+/* Image fade-in on load */
+@keyframes image-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.image-fade.loaded {
+  opacity: 1;
+}
+
+/* Auto fade-in (no JS needed) */
+.image-fade-auto {
+  animation: image-fade-in 0.3s ease-in forwards;
 }

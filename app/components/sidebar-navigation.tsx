@@ -14,12 +14,12 @@ export default function Page() {
 
   return (
     <>
-      <nav className="hidden left-0 pl-10 lg:flex lg:flex-col fixed h-screen justify-center text-2xl leading-10">
-        <Link href="/gigs" className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
-        <Link href="/projects" className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
-        <Link href="/catalogue" className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>
-        <Link href="/reviews" className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
-        <Link href="/about" className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
+      <nav className="hidden left-4mm lg:left-[7mm] lg:flex lg:flex-col fixed h-screen h-[100svh] justify-center text-2xl leading-10">
+        <Link href="/gigs" scroll={true} className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
+        <Link href="/projects" scroll={true} className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
+        <Link href="/catalogue" scroll={true} className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>
+        <Link href="/reviews" scroll={true} className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
+        <Link href="/about" scroll={true} className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
         <a 
           href="mailto:albazi.music@gmail.com" 
           target="_blank" 

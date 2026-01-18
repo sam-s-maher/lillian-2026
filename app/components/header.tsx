@@ -15,28 +15,24 @@ export default function Header({ white = false }: { white?: boolean } = {}) {
   return (
     <>
       <header
-        className={`w-full sticky top-[7mm] lg:top-[4mm] z-40 flex items-center
+        className={`w-full sticky top-[7mm] lg:top-[4mm] z-40 flex items-start
                   shadow-subtle bg-transparent lg:shadow-none
                   ${isFirstPage ? 'lg:justify-start' : 'justify-center'}`}
-        style={{
-          height: 'var(--header-height)',
-        }}>
-        <div className="relative block lg:hidden h-full w-full">
-          <Image
-            src={mobileLogo}
-            alt="Lillian Albazi Logo"
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="relative hidden lg:block h-full w-1/3">
-          <Image
-            src={desktopLogo}
-            alt="Lillian Albazi Logo"
-            fill
-            className="object-contain"
-          />
-        </div>
+                  style={{ height: 'var(--header-height)' }}>
+        <Image
+          src={mobileLogo}
+          alt="Lillian Albazi Logo"
+          width={800}
+          height={200}
+          className="block lg:hidden w-full h-auto"
+        />
+        <Image
+          src={desktopLogo}
+          alt="Lillian Albazi Logo"
+          width={800}
+          height={200}
+          className={`hidden lg:block w-1/3 h-auto ${isFirstPage ? 'px-[4mm]' : ''}`}
+        />
       </header>
     </>
   );

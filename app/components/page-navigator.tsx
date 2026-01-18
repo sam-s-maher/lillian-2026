@@ -24,7 +24,10 @@ export default function PageNavigator() {
   return (
     <nav className="relative z-0 flex justify-between items-center h-8 px-5 w-full">
       <button
-        onClick={() => router.push(prevPage)}
+        onClick={() => {
+          router.push(prevPage, { scroll: true });
+          window.scrollTo(0, 0);
+        }}
         className="p-1 cursor-pointer"
         aria-label="Previous page"
       >
@@ -39,7 +42,10 @@ export default function PageNavigator() {
         {currentLabel}
       </div>
       <button
-        onClick={() => router.push(nextPage)}
+        onClick={() => {
+          router.push(nextPage, { scroll: true });
+          window.scrollTo(0, 0);
+        }}
         className="p-1 cursor-pointer"
         aria-label="Next page"
       >

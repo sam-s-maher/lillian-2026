@@ -30,7 +30,7 @@ export default async function Page() {
               alt="About"
               fill
               style={{ objectFit: 'cover', objectPosition: 'center' }}
-              className="bordered"
+              className="bordered image-fade-auto"
               priority
             />
           </div>
