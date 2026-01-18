@@ -7,7 +7,7 @@ export default async function Page() {
       <div className="hidden lg:block w-full">
         <DesktopPage />
       </div>
-      <div className="relative top-[-10mm] block lg:hidden w-full">
+      <div className="block lg:hidden w-full">
         <MobilePage />
       </div>
     </>

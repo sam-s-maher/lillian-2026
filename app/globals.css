@@ -18,11 +18,22 @@
   --secondary-highlight: var(--light-green);
 
   --header-height: 5rem;
-  --bottom-page-navigator-height: 1.5rem;
+  --bottom-page-navigator-height: 3.5rem;
   --bottom-navigation-height: 3rem;
+
+  --mobile-padding: 7mm;
+  --desktop-padding: 4mm;
 
   --underline-fade-duration: 0.15s;
   --label-fade-duration: 0.3s;
+}
+
+:root {
+    --mobile-vertical-space: calc(
+      var(--header-height) + var(--bottom-page-navigator-height) + var(--bottom-navigation-height) + (2 * var(--mobile-padding))
+    );
+    --mobile-display-space: calc((100svh - var(--mobile-vertical-space)));
+    --mobile-first-page-space: calc(var(--mobile-display-space) + var(--bottom-page-navigator-height));
 }
 
 @media (min-width: 1024px) {
@@ -51,6 +62,7 @@ body {
   background-color: var(--primary-background);
   font-family: 'LuxuriousRoman', serif;
   scroll-behavior: smooth;
+  border-color: var(--primary-accent);
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -10,6 +10,10 @@ module.exports = {
       boxShadow: {
         'subtle': '0 1px 6px 0 rgba(0,0,0,0.02)',
       },
+      spacing: {
+        'mobile': 'var(--mobile-padding)',
+        'desktop': 'var(--desktop-padding)',
+      },
     },
   },
   plugins: [],

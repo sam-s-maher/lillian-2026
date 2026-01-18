@@ -14,7 +14,7 @@ export default function Page() {
 
   return (
     <>
-      <nav className="hidden left-4mm lg:left-[7mm] lg:flex lg:flex-col fixed h-screen h-[100svh] justify-center text-2xl leading-10">
+      <nav className="hidden left-[var(--mobile-padding)] lg:left-[var(--desktop-padding)] lg:flex lg:flex-col fixed h-screen h-[100svh] justify-center text-2xl leading-10">
         <Link href="/gigs" scroll={true} className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
         <Link href="/projects" scroll={true} className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
         <Link href="/catalogue" scroll={true} className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>

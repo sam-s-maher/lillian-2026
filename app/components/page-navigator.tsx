@@ -22,7 +22,10 @@ export default function PageNavigator() {
   const currentLabel = pathname.replace("/", "");
 
   return (
-    <nav className="relative z-0 flex justify-between items-center h-8 px-5 w-full">
+    <nav
+      className="relative z-0 flex justify-between items-center px-5 w-full border-t-2"
+      style={{ height: 'var(--bottom-page-navigator-height)' }}
+    >
       <button
         onClick={() => {
           router.push(prevPage, { scroll: true });

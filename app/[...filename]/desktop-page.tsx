@@ -7,7 +7,9 @@ export default async function Page() {
     <>
       <div>
         <Hero />
-        <div className="fixed bottom-[4mm] left-[4mm] flex flex-col w-1/3">
+        <div
+          className="fixed flex flex-col w-1/3"
+          style={{ bottom: "var(--desktop-padding)", left: "var(--desktop-padding)" }}>
           <Socials />
           <div className="pe-4 pt-6">
             <Acknowledgement />
