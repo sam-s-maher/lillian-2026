@@ -40,6 +40,10 @@ export default function BottomNavigation() {
     };
   }, [open, pathname]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
   const isActive = (path: string) => {
     if (path === "/") return true;
     return pathname === path || pathname.startsWith(`${path}/`);

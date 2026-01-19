@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const pages = ["/gigs", "/projects", "/catalogue", "/reviews", "/about"];
 
@@ -11,6 +12,10 @@ export default function PageNavigator() {
   
   const isFirstPage = pathname === "/";
   
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
   if (isFirstPage) {
     return null;
   }
