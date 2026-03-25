@@ -1,6 +1,13 @@
 import { client } from "../../tina/__generated__/client";
 import Image from "next/image";
 
+function ensureAbsoluteUrl(url: string) {
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return url;
+  }
+  return `https://${url}`;
+}
+
 function formatDate(dateString: string) {
   const date = new Date(dateString);
 
@@ -46,7 +53,7 @@ export default async function GigList({ limit, className = "" }: GigListProps) {
           {gig.node.tickets ? (
             <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
               <a
-                href={gig.node.tickets}
+                href={ensureAbsoluteUrl(gig.node.tickets)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex gap-1 items-center"

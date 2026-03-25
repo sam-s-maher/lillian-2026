@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -12,33 +12,33 @@ import Socials from "./socials";
 export default function BottomNavigation() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const lastScrollY = useRef(0);
+  // const lastScrollY = useRef(0);
 
-  useEffect(() => {
-    if (pathname !== "/") return;
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > 10 && !open) {
-        setOpen(true);
-      }
-      lastScrollY.current = currentScrollY;
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [open, pathname]);
+  // useEffect(() => {
+  //   if (pathname !== "/") return;
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+  //     if (currentScrollY > 10 && !open) {
+  //       setOpen(true);
+  //     }
+  //     lastScrollY.current = currentScrollY;
+  //   };
+  //   window.addEventListener('scroll', handleScroll, { passive: true });
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [open, pathname]);
 
-  useEffect(() => {
-    if (pathname !== "/") return;
-    const openOnScrollAttempt = () => {
-      if (!open) setOpen(true);
-    };
-    window.addEventListener('wheel', openOnScrollAttempt, { passive: true });
-    window.addEventListener('touchmove', openOnScrollAttempt, { passive: true });
-    return () => {
-      window.removeEventListener('wheel', openOnScrollAttempt);
-      window.removeEventListener('touchmove', openOnScrollAttempt);
-    };
-  }, [open, pathname]);
+  // useEffect(() => {
+  //   if (pathname !== "/") return;
+  //   const openOnScrollAttempt = () => {
+  //     if (!open) setOpen(true);
+  //   };
+  //   window.addEventListener('wheel', openOnScrollAttempt, { passive: true });
+  //   window.addEventListener('touchmove', openOnScrollAttempt, { passive: true });
+  //   return () => {
+  //     window.removeEventListener('wheel', openOnScrollAttempt);
+  //     window.removeEventListener('touchmove', openOnScrollAttempt);
+  //   };
+  // }, [open, pathname]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

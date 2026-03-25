@@ -7,7 +7,7 @@ export default async function Page() {
     <>
       <div style={{ height: "var(--mobile-first-page-space)" }}>
         <div className="h-[55%] pt-4">
-          <Hero />
+          <Hero variant="mobile" />
         </div>
         <div className="h-[45%] flex flex-col justify-end">
           <div className="flex flex-col pb-[9svh] px-4">

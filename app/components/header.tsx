@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header({ white = false }: { white?: boolean } = {}) {
@@ -19,20 +20,24 @@ export default function Header({ white = false }: { white?: boolean } = {}) {
                   shadow-subtle bg-transparent lg:shadow-none justify-center
                   ${isFirstPage ? 'lg:justify-start' : 'justify-center'}`}
                   style={{ height: 'var(--header-height)' }}>
-        <Image
-          src={mobileLogo}
-          alt="Lillian Albazi Logo"
-          width={800}
-          height={200}
-          className="block lg:hidden w-full h-auto max-w-[560px]"
-        />
-        <Image
-          src={desktopLogo}
-          alt="Lillian Albazi Logo"
-          width={800}
-          height={200}
-          className={`hidden lg:block w-1/3 h-auto ${isFirstPage ? 'px-[var(--desktop-padding)]' : ''}`}
-        />
+        <Link href="/" className="block lg:hidden w-full max-w-[560px]">
+          <Image
+            src={mobileLogo}
+            alt="Lillian Albazi Logo"
+            width={800}
+            height={200}
+            className="w-full h-auto"
+          />
+        </Link>
+        <Link href="/" className={`hidden lg:block w-1/3 ${isFirstPage ? 'px-[var(--desktop-padding)]' : ''}`}>
+          <Image
+            src={desktopLogo}
+            alt="Lillian Albazi Logo"
+            width={800}
+            height={200}
+            className="w-full h-auto"
+          />
+        </Link>
       </header>
     </>
   );
