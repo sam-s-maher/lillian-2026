@@ -2,9 +2,12 @@
  * @type {import('tinacms').Collection}
  */
 export default {
-  label: "Gigs",
+  label: "Shows",
   name: "gig",
   path: "content/gig",
+  ui: {
+    router: () => "/shows",
+  },
   fields: [
     {
       type: "string",

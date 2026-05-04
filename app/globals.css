@@ -19,7 +19,7 @@
 
   --header-height: 5rem;
   --bottom-page-navigator-height: 3.5rem;
-  --bottom-navigation-height: 3rem;
+  --bottom-navigation-height: 4rem;
 
   --mobile-padding: 7mm;
   --desktop-padding: 4mm;
@@ -157,4 +157,15 @@ a:hover, a.active {
 /* Auto fade-in (no JS needed) */
 .image-fade-auto {
   animation: image-fade-in 0.3s ease-in forwards;
+}
+
+/* Hide social icons progressively on very small screens */
+@media (max-width: 380px) {
+  .social-soundcloud { display: none !important; }
+}
+@media (max-width: 340px) {
+  .social-youtube { display: none !important; }
+}
+@media (max-width: 300px) {
+  .social-bandcamp { display: none !important; }
 }

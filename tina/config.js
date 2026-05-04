@@ -2,6 +2,7 @@ import { defineConfig } from "tinacms";
 import gig from "./collections/gig";
 import project from "./collections/project";
 import catalogue from "./collections/catalogue";
+import music from "./collections/music";
 import about from "./collections/about";
 import reviews from "./collections/reviews";
 import acknowledgement from "./collections/acknowledgement";
@@ -30,7 +31,7 @@ export const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [gig, project, catalogue, about, reviews, acknowledgement],
+    collections: [gig, project, catalogue, music, about, reviews, acknowledgement],
   },
 });
 

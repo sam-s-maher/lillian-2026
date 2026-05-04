@@ -66,9 +66,9 @@ export default function BottomNavigation() {
       >
         <Header white={true} />
         <div className="relative flex flex-col items-start justify-center gap-2">
-          <Link href="/gigs" scroll={true} className={isActive("/gigs") ? "active" : undefined}>Gigs</Link>
+          <Link href="/shows" scroll={true} className={isActive("/shows") ? "active" : undefined}>Shows</Link>
           <Link href="/projects" scroll={true} className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
-          <Link href="/catalogue" scroll={true} className={isActive("/catalogue") ? "active" : undefined}>Catalogue</Link>
+          <Link href="/music" scroll={true} className={isActive("/music") ? "active" : undefined}>Music</Link>
           <Link href="/reviews" scroll={true} className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
           <Link href="/about" scroll={true} className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
           <a 
@@ -90,7 +90,7 @@ export default function BottomNavigation() {
       >
         <PageNavigator />
         <div
-          className="px-4 py-2 flex flex-row justify-between items-center w-full"
+          className="px-4 py-4 flex flex-row justify-between items-center w-full"
           style={{
             height: "var(--bottom-navigation-height)",
             color: open ? "var(--secondary-text)" : "var(--primary-text)",

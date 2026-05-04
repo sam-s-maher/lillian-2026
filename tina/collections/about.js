@@ -5,6 +5,9 @@ export default {
   label: "About",
   name: "about",
   path: "content/about",
+  ui: {
+    router: () => "/about",
+  },
   fields: [
     {
       type: "image",

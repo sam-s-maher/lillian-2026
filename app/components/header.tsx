@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function Header({ white = false }: { white?: boolean } = {}) {
   const pathname = usePathname();
   
-  // Hide header on the first/home page
+  // Check if on home page
   const isFirstPage = pathname === "/";
 
   const mobileLogo = white ? "/images/lillian_logo_mobile_white.png" : "/images/lillian_logo_mobile.png";
@@ -17,8 +17,8 @@ export default function Header({ white = false }: { white?: boolean } = {}) {
     <>
       <header
         className={`w-full sticky top-[var(--mobile-padding)] lg:top-[var(--desktop-padding)] z-40 flex items-start
-                  shadow-subtle bg-transparent lg:shadow-none justify-center
-                  ${isFirstPage ? 'lg:justify-start' : 'justify-center'}`}
+                  shadow-subtle bg-transparent lg:shadow-none
+                  justify-center ${isFirstPage ? 'lg:fixed lg:left-0 lg:justify-start lg:w-1/3' : 'lg:justify-center'}`}
                   style={{ height: 'var(--header-height)' }}>
         <Link href="/" className="block lg:hidden w-full max-w-[560px]">
           <Image
@@ -29,7 +29,7 @@ export default function Header({ white = false }: { white?: boolean } = {}) {
             className="w-full h-auto"
           />
         </Link>
-        <Link href="/" className={`hidden lg:block w-1/3 ${isFirstPage ? 'px-[var(--desktop-padding)]' : ''}`}>
+        <Link href="/" className={`hidden lg:block ${isFirstPage ? 'w-full px-[var(--desktop-padding)]' : 'w-1/3'}`}>
           <Image
             src={desktopLogo}
             alt="Lillian Albazi Logo"

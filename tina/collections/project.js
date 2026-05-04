@@ -5,6 +5,9 @@ export default {
   label: "Projects",
   name: "project",
   path: "content/project",
+  ui: {
+    router: () => "/projects",
+  },
   fields: [
     {
       type: "string",

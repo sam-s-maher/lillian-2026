@@ -45,37 +45,42 @@ export default async function GigList({ limit, className = "" }: GigListProps) {
   return (
     <div className={`flex flex-col gap-1 lg:gap-3 items-center w-full lg:px-4 md:text-2xl ${className}`}>
       {sortedGigs.map((gig) => (
-        <div key={gig.node.id} className="flex items-center w-full">
-          <div className="whitespace-nowrap flex-shrink-0">
-            {formatDate(gig.node.when)}
+        gig.node.tickets ? (
+          <a
+            key={gig.node.id}
+            href={ensureAbsoluteUrl(gig.node.tickets)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center w-full px-1 -mx-1 transition-colors hover:bg-[var(--primary-highlight)]"
+          >
+            <div className="whitespace-nowrap flex-shrink-0">
+              {formatDate(gig.node.when)}
+            </div>
+            <div className="h-[0.8em] flex-1 mx-2 border-b border-current" />
+            <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
+              <Image
+                src="/images/ticket.png"
+                alt="Tickets"
+                width={30}
+                height={30}
+                className="inline-block me-1"
+              />
+              <span className="me-2">{gig.node.venue}</span>
+              <span className="uppercase">{gig.node.state}</span>
+            </div>
+          </a>
+        ) : (
+          <div key={gig.node.id} className="flex items-center w-full">
+            <div className="whitespace-nowrap flex-shrink-0">
+              {formatDate(gig.node.when)}
+            </div>
+            <div className="h-[0.8em] flex-1 mx-2 border-b border-current" />
+            <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
+              <span className="me-2">{gig.node.venue}</span>
+              <span className="uppercase">{gig.node.state}</span>
+            </div>
           </div>
-          <div className="h-[0.8em] flex-1 mx-2 border-b border-current" />
-          {gig.node.tickets ? (
-            <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
-              <a
-                href={ensureAbsoluteUrl(gig.node.tickets)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-1 items-center"
-              >
-                <Image
-                  src="/images/ticket.png"
-                  alt="Tickets"
-                  width={30}
-                  height={30}
-                  className="inline-block me-1"
-                />
-                <span className="me-2">{gig.node.venue}</span>
-                <span className="uppercase">{gig.node.state}</span>
-              </a>
-            </div>
-          ) : (
-            <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
-                <span className="me-2">{gig.node.venue}</span>
-                <span className="uppercase">{gig.node.state}</span>
-            </div>
-          )}
-        </div>
+        )
       ))}
     </div>
   );

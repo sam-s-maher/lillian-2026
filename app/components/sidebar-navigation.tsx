@@ -20,11 +20,11 @@ export default function Page() {
     <>
       <nav className="hidden left-[var(--mobile-padding)] lg:left-[var(--desktop-padding)] lg:flex lg:flex-col fixed h-screen h-[100svh] justify-center text-2xl leading-10">
         <Link
-          href="/gigs"
+          href="/shows"
           scroll={true}
-          className={isActive("/gigs") ? "active" : undefined}
+          className={isActive("/shows") ? "active" : undefined}
         >
-          Gigs
+          Shows
         </Link>
         <Link
           href="/projects"
@@ -34,11 +34,11 @@ export default function Page() {
           Projects
         </Link>
         <Link
-          href="/catalogue"
+          href="/music"
           scroll={true}
-          className={isActive("/catalogue") ? "active" : undefined}
+          className={isActive("/music") ? "active" : undefined}
         >
-          Catalogue
+          Music
         </Link>
         <Link
           href="/reviews"

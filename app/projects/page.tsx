@@ -15,20 +15,21 @@ export default async function Page() {
     <>
       <div
         id="projects-section"
-        className="section flex flex-col gap-4 lg:gap-12 items-center w-full">
+        className="section flex flex-col lg:flex-row lg:flex-wrap gap-4 lg:gap-12 items-center lg:items-start lg:justify-center w-full">
         {sortedProjects.map((project) => (
-          <div key={project.node.id} className="flex flex-col items-center w-full gap-0.5">
-            <div className="relative h-[11rem] lg:h-[24rem] w-full overflow-hidden">
+          <div key={project.node.id} className="flex flex-col items-center w-full lg:w-[calc(50%-1rem)] lg:max-w-md gap-0.5">
+            <div className="w-full overflow-hidden">
               <Image
                 src={project.node.hero_image}
                 alt={project.node.title}
-                fill
+                width={1200}
+                height={800}
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
-                className="bordered image-fade-auto"
+                className="bordered image-fade-auto w-full h-auto max-h-[11rem] lg:max-h-[18rem]"
                 priority
               />
             </div>
-            <div className="pt-1 lg:pt-4 flex flex-wrap justify-between items-center lg:items-start lg:w-3/4">
+            <div className="pt-1 lg:pt-4 flex flex-wrap justify-between items-center lg:items-start w-full">
               <div className="text-lg lg:text-xl decoration-[1px] w-1/2 font-helvetica">
                 {project.node.title}
               </div>

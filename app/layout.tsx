@@ -4,6 +4,7 @@ import React from "react";
 import Header from "./components/header";
 import SidebarNavigation from "./components/sidebar-navigation";
 import BottomNavigation from "./components/bottom-navigation";
+import Footer from "./components/footer";
 
 export default function RootLayout({
   children,
@@ -17,9 +18,10 @@ export default function RootLayout({
           <SidebarNavigation />
           <BottomNavigation />
           <Header />
-          <main className="w-full lg:w-[65%] lg:max-w-5xl flex flex-col items-center justify-center pt-4 lg:py-10 gap-16">
+          <main className="w-full lg:w-[65%] lg:max-w-5xl flex flex-col items-center justify-center pt-4 lg:py-10 lg:pb-16 gap-16">
             {children}
           </main>
+          <Footer />
         </div>
       </body>
     </html>

@@ -5,6 +5,9 @@ export default {
   label: "Reviews",
   name: "reviews",
   path: "content/reviews",
+  ui: {
+    router: () => "/reviews",
+  },
   fields: [
     {
       type: "rich-text",
