@@ -12,7 +12,7 @@ export default function BandcampEmbed({ albumId, title, bandcampUrl }: BandcampE
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="relative w-full" style={{ height: 470 }}>
+    <div className="relative w-full max-w-[350px]" style={{ height: 470 }}>
       {/* Skeleton loader */}
       {!isLoaded && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex flex-col items-center justify-center">

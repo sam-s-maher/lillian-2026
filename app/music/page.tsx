@@ -17,12 +17,12 @@ export default async function Page() {
     <>
       <div
         id="music-section"
-        className="section flex flex-col lg:flex-row lg:flex-wrap gap-8 lg:gap-12 items-center lg:items-start lg:justify-center w-full"
+        className="section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-8 lg:gap-y-6 w-full"
       >
         {sortedMusic.map((item) => (
           <div
             key={item.node.id}
-            className="flex flex-col items-center w-full max-w-[350px] lg:w-[calc(50%-1.5rem)]"
+            className="flex flex-col items-center justify-center w-full"
           >
             <BandcampEmbed
               albumId={item.node.album_id}
