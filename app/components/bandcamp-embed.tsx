@@ -6,13 +6,17 @@ interface BandcampEmbedProps {
   albumId: string;
   title: string;
   bandcampUrl: string;
+  size?: "small" | "large";
 }
 
-export default function BandcampEmbed({ albumId, title, bandcampUrl }: BandcampEmbedProps) {
+export default function BandcampEmbed({ albumId, title, bandcampUrl, size = "large" }: BandcampEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const height = size === "large" ? 470 : 120;
+  const maxWidth = size === "large" ? 250 : 350;
+
   return (
-    <div className="relative w-full max-w-[350px]" style={{ height: 470 }}>
+    <div className="relative w-full" style={{ maxWidth, height }}>
       {/* Skeleton loader */}
       {!isLoaded && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex flex-col items-center justify-center">
@@ -26,11 +30,11 @@ export default function BandcampEmbed({ albumId, title, bandcampUrl }: BandcampE
         style={{ 
           border: 0, 
           width: "100%", 
-          height: 470,
+          height,
           opacity: isLoaded ? 1 : 0,
           transition: "opacity 0.3s ease-in"
         }}
-        src={`https://bandcamp.com/EmbeddedPlayer/album=${albumId}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/`}
+        src={`https://bandcamp.com/EmbeddedPlayer/album=${albumId}/size=${size}/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/`}
         seamless
         title={title}
         onLoad={() => setIsLoaded(true)}

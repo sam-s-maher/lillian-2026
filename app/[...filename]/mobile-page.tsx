@@ -1,6 +1,7 @@
 import Hero from "../components/hero";
 import GigList from "../components/gig-list";
 import Acknowledgement from "../components/acknowledgement";
+import Socials from "../components/socials";
 
 export default async function Page() {
   return (
@@ -14,7 +15,12 @@ export default async function Page() {
             <h1 className="text-sm">THE NEXT THREE:</h1>
             <GigList limit={3} className="text-sm"/>
           </div>
-          <Acknowledgement />
+          <div className="flex flex-col gap-2">
+            <div className="px-4">
+              <Socials />
+            </div>
+            <Acknowledgement />
+          </div>
         </div>
       </div>
     </>

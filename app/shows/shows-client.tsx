@@ -1,4 +1,6 @@
-import { client } from "../../tina/__generated__/client";
+"use client";
+
+import { useTina } from "tinacms/dist/react";
 import Image from "next/image";
 
 function ensureAbsoluteUrl(url: string) {
@@ -10,32 +12,33 @@ function ensureAbsoluteUrl(url: string) {
 
 function formatDate(dateString: string) {
   const date = new Date(dateString);
-
   const day = date.getDate();
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
-
   return `${day}/${month}/${year}`;
 }
 
-interface GigListProps {
-  limit?: number;
+interface ShowsClientProps {
+  data: any;
+  query: string;
+  variables: any;
   className?: string;
+  limit?: number;
 }
 
-export default async function GigList({ limit, className = "" }: GigListProps) {
-  const gigs = await client.queries.gigConnection();
+export default function ShowsClient({ data, query, variables, className = "", limit }: ShowsClientProps) {
+  const { data: tinaData } = useTina({ data, query, variables });
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const sortedGigs = (gigs.data.gigConnection?.edges ?? [])
-    .filter(gig => {
+  const sortedGigs = (tinaData.gigConnection?.edges ?? [])
+    .filter((gig: any) => {
       const gigDate = new Date(gig.node.when);
       gigDate.setHours(0, 0, 0, 0);
       return gigDate > today;
     })
-    .sort((a, b) => {
+    .sort((a: any, b: any) => {
       const dateA = new Date(a.node.when).getTime();
       const dateB = new Date(b.node.when).getTime();
       return dateA - dateB;
@@ -44,7 +47,7 @@ export default async function GigList({ limit, className = "" }: GigListProps) {
 
   return (
     <div className={`flex flex-col gap-1 lg:gap-3 items-center w-full lg:px-4 md:text-2xl ${className}`}>
-      {sortedGigs.map((gig) => (
+      {sortedGigs.map((gig: any) => (
         gig.node.tickets ? (
           <a
             key={gig.node.id}

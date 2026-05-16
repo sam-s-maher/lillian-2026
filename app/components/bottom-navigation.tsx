@@ -5,40 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import PageNavigator from "./page-navigator";
-import EnvelopeIcon from "./icons/envelope-icon";
 import Header from "./header";
 import Socials from "./socials";
 
 export default function BottomNavigation() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  // const lastScrollY = useRef(0);
-
-  // useEffect(() => {
-  //   if (pathname !== "/") return;
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY;
-  //     if (currentScrollY > 10 && !open) {
-  //       setOpen(true);
-  //     }
-  //     lastScrollY.current = currentScrollY;
-  //   };
-  //   window.addEventListener('scroll', handleScroll, { passive: true });
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, [open, pathname]);
-
-  // useEffect(() => {
-  //   if (pathname !== "/") return;
-  //   const openOnScrollAttempt = () => {
-  //     if (!open) setOpen(true);
-  //   };
-  //   window.addEventListener('wheel', openOnScrollAttempt, { passive: true });
-  //   window.addEventListener('touchmove', openOnScrollAttempt, { passive: true });
-  //   return () => {
-  //     window.removeEventListener('wheel', openOnScrollAttempt);
-  //     window.removeEventListener('touchmove', openOnScrollAttempt);
-  //   };
-  // }, [open, pathname]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -70,16 +42,7 @@ export default function BottomNavigation() {
           <Link href="/projects" scroll={true} className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
           <Link href="/music" scroll={true} className={isActive("/music") ? "active" : undefined}>Music</Link>
           <Link href="/reviews" scroll={true} className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
-          <Link href="/about" scroll={true} className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
-          <a 
-            href="mailto:albazi.music@gmail.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:opacity-70 transition-opacity"
-          >
-            Contact
-            <EnvelopeIcon />
-          </a>
+          <Link href="/about" scroll={true} className={isActive("/about") ? "active" : undefined}>About</Link>
         </div>
       </div>
       <nav

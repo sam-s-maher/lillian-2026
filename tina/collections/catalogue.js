@@ -19,7 +19,6 @@ export default {
       required: true,
       ui: {
         dateFormat: 'DD/MM/YYYY',
-        parse: (value) => value && value.format('DD/MM/YYYY'),
       },
     },
     {

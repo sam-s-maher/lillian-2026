@@ -6,8 +6,8 @@ interface HeroProps {
 
 export default function Hero({ variant = 'desktop' }: HeroProps) {
   const imageSrc = variant === 'mobile' 
-    ? '/images/rk_edited_mobile.png' 
-    : '/images/rk_edited_desktop.png';
+    ? '/images/rk_desktop.jpg' 
+    : '/images/rk_desktop.jpg';
 
   return (
     <div className="w-full h-full lg:p-[var(--desktop-padding)] lg:fixed lg:right-0 lg:top-0 lg:w-2/3">

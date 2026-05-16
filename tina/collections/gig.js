@@ -25,7 +25,6 @@ export default {
       name: "when",
       ui: {
         dateFormat: 'DD/MM/YYYY',
-        parse: (value) => value && value.format('DD/MM/YYYY'),
       },
     },
     {

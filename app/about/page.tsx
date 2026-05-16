@@ -1,44 +1,14 @@
 import { client } from "../../tina/__generated__/client";
-import Image from "next/image";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import AboutClient from "./about-client";
 
 export default async function Page() {
-  const aboutData = await client.queries.aboutConnection();
-  
-  // Get the first (and likely only) about record
-  const about = aboutData.data.aboutConnection?.edges?.[0]?.node;
-
-  if (!about) {
-    return (
-      <div
-        id="about-section"
-        className="section flex flex-col items-center justify-center">
-        No about content found
-      </div>
-    );
-  }
+  const result = await client.queries.aboutConnection();
 
   return (
-    <>
-      <div
-        id="about-section"
-        className="section flex flex-col items-center w-full">
-        <div className="w-full lg:w-2/5">
-          <div className="relative aspect-square w-full overflow-hidden">
-            <Image
-              src={about.hero_image}
-              alt="About"
-              fill
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
-              className="bordered image-fade-auto"
-              priority
-            />
-          </div>
-        </div>
-        <div className="w-full lg:w-1/2 mt-6 lg:mt-12">
-          <TinaMarkdown content={about.description} />
-        </div>
-      </div>
-    </>
+    <AboutClient
+      data={result.data}
+      query={result.query}
+      variables={result.variables}
+    />
   );
 }

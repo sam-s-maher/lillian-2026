@@ -4,8 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-import EnvelopeIcon from "./icons/envelope-icon";
-
 export default function Page() {
   const pathname = usePathname();
   useEffect(() => {
@@ -50,19 +48,10 @@ export default function Page() {
         <Link
           href="/about"
           scroll={true}
-          className={`pt-6 ${isActive("/about") ? "active" : ""}`}
+          className={isActive("/about") ? "active" : undefined}
         >
           About
         </Link>
-        <a
-          href="mailto:albazi.music@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 hover:opacity-70 transition-opacity"
-        >
-          Contact
-          <EnvelopeIcon />
-        </a>
       </nav>
     </>
   );
