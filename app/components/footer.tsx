@@ -29,9 +29,10 @@ export default function Footer() {
       const scrollTop = window.scrollY;
       const clientHeight = window.innerHeight;
       
-      // Show when within 100px of bottom
+      // Show when there's no scrollable content, or when within 100px of bottom
+      const hasNoScroll = scrollHeight <= clientHeight + 50;
       const isNearBottom = scrollTop + clientHeight >= scrollHeight - 100;
-      setVisible(isNearBottom);
+      setVisible(hasNoScroll || isNearBottom);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

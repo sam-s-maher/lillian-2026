@@ -28,7 +28,7 @@ export default function PageNavigator() {
 
   return (
     <nav
-      className="relative z-0 flex justify-between items-center px-5 w-full border-t-2"
+      className="relative z-0 flex justify-between items-center px-5 w-full border-t-2 short-screen:hidden"
       style={{ height: 'var(--bottom-page-navigator-height)' }}
     >
       <button

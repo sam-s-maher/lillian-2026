@@ -51,33 +51,52 @@ export default async function GigList({ limit, className = "" }: GigListProps) {
             href={ensureAbsoluteUrl(gig.node.tickets)}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center w-full px-1 -mx-1"
+            className="flex flex-col md:flex-row md:items-center w-full px-1 -mx-1"
           >
-            <div className="whitespace-nowrap flex-shrink-0">
-              {formatDate(gig.node.when)}
+            <div className="flex items-center w-full">
+              <div className="whitespace-nowrap flex-shrink-0">
+                {formatDate(gig.node.when)}
+              </div>
+              <div className="h-[0.8em] flex-1 mx-2 border-b border-current" />
+              <div className="flex gap-1 whitespace-nowrap flex-shrink-0 items-center">
+                <Image
+                  src="/images/ticket.png"
+                  alt="Tickets"
+                  width={30}
+                  height={30}
+                  className="hidden md:inline-block me-1"
+                />
+                <Image
+                  src="/images/ticket.png"
+                  alt="Tickets"
+                  width={20}
+                  height={20}
+                  className="inline-block md:hidden me-1"
+                />
+                <span className="md:hidden text-sm">{gig.node.venue}</span>
+                <span className="hidden md:inline me-2">{gig.node.venue}</span>
+                <span className="hidden md:inline uppercase">{gig.node.state}</span>
+              </div>
             </div>
-            <div className="h-[0.8em] flex-1 mx-2 border-b border-current" />
-            <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
-              <Image
-                src="/images/ticket.png"
-                alt="Tickets"
-                width={30}
-                height={30}
-                className="inline-block me-1"
-              />
-              <span className="me-2">{gig.node.venue}</span>
-              <span className="uppercase">{gig.node.state}</span>
+            <div className="md:hidden text-[10px] uppercase text-right w-full">
+              {gig.node.state}
             </div>
           </a>
         ) : (
-          <div key={gig.node.id} className="flex items-center w-full">
-            <div className="whitespace-nowrap flex-shrink-0">
-              {formatDate(gig.node.when)}
+          <div key={gig.node.id} className="flex flex-col md:flex-row md:items-center w-full">
+            <div className="flex items-center w-full">
+              <div className="whitespace-nowrap flex-shrink-0">
+                {formatDate(gig.node.when)}
+              </div>
+              <div className="h-[0.8em] flex-1 mx-2 border-b border-current" />
+              <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
+                <span className="md:hidden text-sm">{gig.node.venue}</span>
+                <span className="hidden md:inline me-2">{gig.node.venue}</span>
+                <span className="hidden md:inline uppercase">{gig.node.state}</span>
+              </div>
             </div>
-            <div className="h-[0.8em] flex-1 mx-2 border-b border-current" />
-            <div className="flex gap-1 whitespace-nowrap flex-shrink-0">
-              <span className="me-2">{gig.node.venue}</span>
-              <span className="uppercase">{gig.node.state}</span>
+            <div className="md:hidden text-[10px] uppercase text-right w-full">
+              {gig.node.state}
             </div>
           </div>
         )

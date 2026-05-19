@@ -36,10 +36,26 @@ export default function ProjectsClient({ data, query, variables }: ProjectsClien
             />
           </div>
           <div className="pt-1 lg:pt-4 flex flex-col items-start w-full">
-            <div className="text-lg lg:text-xl decoration-[1px] font-helvetica">
-              {project.node.title}
+            <div className="flex justify-between items-baseline w-full">
+              <div className="text-lg lg:text-xl decoration-[1px] font-helvetica">
+                {project.node.title}
+              </div>
+              <div className="flex gap-7 text-sm lg:text-lg md:hidden">
+                <a
+                  href={project.node.instagram_link}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                    Instagram
+                </a>
+                <a 
+                  href={project.node.bandcamp_link}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                    Bandcamp
+                </a>
+              </div>
             </div>
-            <div className="flex gap-7 text-sm lg:text-lg pt-1">
+            <div className="hidden md:flex gap-7 text-sm lg:text-lg pt-1">
               <a
                 href={project.node.instagram_link}
                 target="_blank"

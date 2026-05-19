@@ -169,3 +169,10 @@ a:hover, a.active {
 @media (max-width: 300px) {
   .social-bandcamp { display: none !important; }
 }
+
+/* Hide page navigator on short screens */
+@media (max-height: 600px) {
+  .short-screen\:hidden {
+    display: none !important;
+  }
+}

@@ -29,7 +29,7 @@ export default function AboutClient({ data, query, variables }: AboutClientProps
     <div
       id="about-section"
       className="section flex flex-col lg:flex-row w-full gap-6 lg:gap-12 pt-4">
-      <div className="w-full lg:w-2/5 lg:self-start lg:sticky lg:top-[50vh] lg:-translate-y-1/2">
+      <div className="w-full lg:w-2/5 lg:self-start lg:sticky lg:top-[calc(var(--header-height)+1rem)]">
         <div className="relative aspect-square w-full overflow-hidden">
           <Image
             src={about.hero_image}

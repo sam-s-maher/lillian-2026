@@ -12,7 +12,7 @@ interface BandcampEmbedProps {
 export default function BandcampEmbed({ albumId, title, bandcampUrl, size = "large" }: BandcampEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const height = size === "large" ? 470 : 120;
+  const height = size === "large" ? 400 : 120;
   const maxWidth = size === "large" ? 250 : 350;
 
   return (
