@@ -17,10 +17,10 @@ export default {
     },
     {
       type: "string",
-      label: "Album ID",
-      name: "album_id",
+      label: "Track ID",
+      name: "track_id",
       required: true,
-      description: "The Bandcamp album ID (found in the embed code)",
+      description: "The Bandcamp track ID (found in the embed code)",
     },
     {
       type: "string",

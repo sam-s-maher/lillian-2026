@@ -26,7 +26,7 @@ export default function BottomNavigation() {
       <div
         onClick={() => setOpen(false)}
         className={
-          `secondary-colours lg:hidden fixed inset-0 flex flex-col items-start justify-start z-50 text-xl gap-50 p-10 transition-all duration-200 ease-out
+          `secondary-colours lg:hidden fixed inset-0 flex flex-col items-start justify-center z-50 text-xl p-10 transition-all duration-200 ease-out
           ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}
           `
         }
@@ -36,8 +36,10 @@ export default function BottomNavigation() {
           color: "var(--secondary-text)",
         }}
       >
-        <Header white={true} />
-        <div className="relative flex flex-col items-start justify-center gap-2">
+        <div className="absolute top-0 left-0 right-0 p-10">
+          <Header white={true} />
+        </div>
+        <div className="flex flex-col items-start justify-center gap-2">
           <Link href="/shows" scroll={true} className={isActive("/shows") ? "active" : undefined}>Shows</Link>
           <Link href="/projects" scroll={true} className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
           <Link href="/music" scroll={true} className={isActive("/music") ? "active" : undefined}>Music</Link>

@@ -36,9 +36,15 @@ export default function Footer() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Check initial state
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isFirstPage]);
+    
+    // Delay initial check to allow content to render
+    const timeout = setTimeout(handleScroll, 100);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeout);
+    };
+  }, [isFirstPage, pathname]);
 
   if (!acknowledgement || isFirstPage) {
     return null;

@@ -1,6 +1,6 @@
 ---
 title: After-Image
-album_id: '2124084916'
+track_id: '3691131532'
 bandcamp_url: https://lillianalbazi.bandcamp.com/album/after-image
 order: 1
 ---

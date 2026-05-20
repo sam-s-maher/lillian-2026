@@ -13,7 +13,7 @@ export default function MusicClient({ data, query, variables }: MusicClientProps
   const { data: tinaData } = useTina({ data, query, variables });
 
   const sortedMusic = (tinaData.musicConnection?.edges ?? [])
-    .filter((edge: any) => edge?.node && edge.node.album_id && edge.node.title)
+    .filter((edge: any) => edge?.node && edge.node.track_id && edge.node.title)
     .slice()
     .sort((a: any, b: any) => {
       const orderA = a.node.order ?? 0;
@@ -32,7 +32,7 @@ export default function MusicClient({ data, query, variables }: MusicClientProps
           className="flex flex-col items-center justify-center w-full"
         >
           <BandcampEmbed
-            albumId={item.node.album_id}
+            trackId={item.node.track_id}
             title={item.node.title}
             bandcampUrl={item.node.bandcamp_url}
             size="large"

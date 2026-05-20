@@ -1,6 +1,6 @@
 ---
-title: After-Image III
-album_id: '2124084916'
-bandcamp_url: https://lillianalbazi.bandcamp.com/album/after-image
+title: Objects Without Pain
+track_id: '1011328080'
+bandcamp_url: https://greatfalls.bandcamp.com/album/objects-without-pain
 order: 3
 ---
