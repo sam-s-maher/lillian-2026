@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useEffect } from "react";
 
-const pages = ["/shows", "/projects", "/music", "/reviews", "/about"];
+const pages = ["/shows", "/about", "/projects", "/music", "/reviews"];
 
 export default function PageNavigator() {
   const pathname = usePathname();

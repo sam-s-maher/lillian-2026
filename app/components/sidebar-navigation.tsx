@@ -25,9 +25,16 @@ export default function Page() {
           Shows
         </Link>
         <Link
+          href="/about"
+          scroll={true}
+          className={`pt-6 ${isActive("/about") ? "active" : ""}`}
+        >
+          About
+        </Link>
+        <Link
           href="/projects"
           scroll={true}
-          className={`pt-6 ${isActive("/projects") ? "active" : ""}`}
+          className={isActive("/projects") ? "active" : undefined}
         >
           Projects
         </Link>
@@ -44,13 +51,6 @@ export default function Page() {
           className={isActive("/reviews") ? "active" : undefined}
         >
           Reviews
-        </Link>
-        <Link
-          href="/about"
-          scroll={true}
-          className={isActive("/about") ? "active" : undefined}
-        >
-          About
         </Link>
       </nav>
     </>

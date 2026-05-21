@@ -41,10 +41,10 @@ export default function BottomNavigation() {
         </div>
         <div className="flex flex-col items-start justify-center gap-2">
           <Link href="/shows" scroll={true} className={isActive("/shows") ? "active" : undefined}>Shows</Link>
-          <Link href="/projects" scroll={true} className={`pt-6 ${isActive("/projects") ? "active" : ""}`}>Projects</Link>
+          <Link href="/about" scroll={true} className={`pt-6 ${isActive("/about") ? "active" : ""}`}>About</Link>
+          <Link href="/projects" scroll={true} className={isActive("/projects") ? "active" : undefined}>Projects</Link>
           <Link href="/music" scroll={true} className={isActive("/music") ? "active" : undefined}>Music</Link>
           <Link href="/reviews" scroll={true} className={isActive("/reviews") ? "active" : undefined}>Reviews</Link>
-          <Link href="/about" scroll={true} className={isActive("/about") ? "active" : undefined}>About</Link>
         </div>
       </div>
       <nav

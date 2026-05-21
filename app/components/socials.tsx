@@ -41,10 +41,11 @@ const socials = [
   {
     name: "YouTube",
     url: "https://www.youtube.com/channel/UC9uUpM3BmJ-meiSJfvnJUfQ",
-    icon: "/images/youtube.svg",
-    iconWhite: "/images/youtube_white.svg",
+    icon: null,
+    iconWhite: null,
     size: 24,
     hideClass: "social-youtube",
+    isYouTube: true,
   },
   {
     name: "SoundCloud",
@@ -89,17 +90,29 @@ function EmailIcon({ white, size }: { white: boolean; size: number }) {
     <svg 
       width={size} 
       height={size} 
-      viewBox="0 0 24 24" 
+      viewBox="0 0 20 20" 
       xmlns="http://www.w3.org/2000/svg"
+      fill={fillColor}
     >
-      <defs>
-        <mask id="envelope-mask">
-          <circle cx="12" cy="12" r="12" fill="white"/>
-          <rect x="5" y="7" width="14" height="10" rx="1.5" fill="black"/>
-        </mask>
-      </defs>
-      <circle cx="12" cy="12" r="12" fill={fillColor} mask="url(#envelope-mask)"/>
-      <path d="M5 8l7 4.5 7-4.5" stroke={fillColor} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6S15.302.4 10 .4zM6.231 7h7.52c.399 0 .193.512-.024.643-.217.13-3.22 1.947-3.333 2.014s-.257.1-.403.1a.793.793 0 0 1-.402-.1L6.255 7.643C6.038 7.512 5.833 7 6.231 7zM14 12.5c0 .21-.252.5-.444.5H6.444C6.252 13 6 12.71 6 12.5V8.853c0-.092-.002-.211.172-.11l3.417 2.015a.69.69 0 0 0 .402.1c.146 0 .252-.011.403-.1l3.434-2.014c.174-.102.172.018.172.11V12.5z"/>
+    </svg>
+  );
+}
+
+function YouTubeIcon({ white, size }: { white: boolean; size: number }) {
+  const circleColor = white ? "var(--secondary-text)" : "var(--primary-text)";
+  const playColor = white ? "var(--secondary-background)" : "var(--primary-background)";
+  
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 72 72" 
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+    >
+      <path d="M36,72 L36,72 C55.882251,72 72,55.882251 72,36 L72,36 C72,16.117749 55.882251,-3.65231026e-15 36,0 L36,0 C16.117749,3.65231026e-15 -2.4348735e-15,16.117749 0,36 L0,36 C2.4348735e-15,55.882251 16.117749,72 36,72 Z" fill={circleColor}/>
+      <path d="M31.044,42.269916 L31.0425,28.6877416 L44.0115,35.5022437 L31.044,42.269916 Z M59.52,26.3341627 C59.52,26.3341627 59.0505,23.003199 57.612,21.5363665 C55.7865,19.610299 53.7405,19.6012352 52.803,19.4894477 C46.086,19 36.0105,19 36.0105,19 L35.9895,19 C35.9895,19 25.914,19 19.197,19.4894477 C18.258,19.6012352 16.2135,19.610299 14.3865,21.5363665 C12.948,23.003199 12.48,26.3341627 12.48,26.3341627 C12.48,26.3341627 12,30.2467232 12,34.1577731 L12,37.8256098 C12,41.7381703 12.48,45.6492202 12.48,45.6492202 C12.48,45.6492202 12.948,48.9801839 14.3865,50.4470165 C16.2135,52.3730839 18.612,52.3126583 19.68,52.5135736 C23.52,52.8851913 36,53 36,53 C36,53 46.086,52.9848936 52.803,52.4954459 C53.7405,52.3821478 55.7865,52.3730839 57.612,50.4470165 C59.0505,48.9801839 59.52,45.6492202 59.52,45.6492202 C59.52,45.6492202 60,41.7381703 60,37.8256098 L60,34.1577731 C60,30.2467232 59.52,26.3341627 59.52,26.3341627 L59.52,26.3341627 Z" fill={playColor}/>
     </svg>
   );
 }
@@ -121,6 +134,8 @@ export default function Socials({ white = false, onClick }: SocialsProps) {
             <EmailIcon white={white} size={social.size} />
           ) : social.isSoundCloud ? (
             <SoundCloudIcon white={white} size={social.size} />
+          ) : social.isYouTube ? (
+            <YouTubeIcon white={white} size={social.size} />
           ) : (
             <Image
               src={white ? social.iconWhite! : social.icon!}
