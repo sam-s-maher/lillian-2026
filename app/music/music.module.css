@@ -1,6 +1,8 @@
 .content {
   width: 100%;
   min-height: var(--content-min-height);
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 768px) and (orientation: landscape) {
@@ -14,7 +16,8 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: flex-start;
-  width: 100%;
+  max-width: 812px;
+  margin: 0 auto;
 }
 
 /* Make TinaCMS wrapper divs take full width in compact mode */
