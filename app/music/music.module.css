@@ -1,0 +1,117 @@
+.content {
+  width: 100%;
+  min-height: var(--content-min-height);
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .content {
+    min-height: 0;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Make TinaCMS wrapper divs take full width in compact mode */
+@media (max-width: 650px) {
+  .grid > div {
+    width: 100%;
+  }
+}
+
+/* Bandcamp embed wrapper - sized to fit 3 in ~1400px with gaps */
+.embedWrapper {
+  position: relative;
+  width: 260px;
+  height: 383px;
+  flex-shrink: 0;
+}
+
+.embedWrapperCompact {
+  width: 100%;
+  flex: 1 1 100%;
+  height: 120px;
+  min-width: 330px;
+}
+
+.embedWrapper iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Skeleton loader */
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+
+.skeletonArt {
+  width: 100%;
+  height: 270px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.skeletonLine {
+  height: 14px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeletonControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.skeletonPlayBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  flex-shrink: 0;
+}
+
+.skeletonProgress {
+  flex: 1;
+  height: 8px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

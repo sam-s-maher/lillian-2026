@@ -20,13 +20,12 @@ export default {
       label: "Track ID",
       name: "track_id",
       required: true,
-      description: "The Bandcamp track ID (found in the embed code)",
+      description: "The Bandcamp track ID (found in the embed code as track=...)",
     },
     {
       type: "string",
       label: "Bandcamp URL",
       name: "bandcamp_url",
-      required: true,
     },
     {
       type: "number",
