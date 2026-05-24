@@ -66,6 +66,7 @@ interface MusicNode {
   title?: string | null;
   track_id?: string | null;
   bandcamp_url?: string | null;
+  order?: number | null;
 }
 
 interface MusicClientProps {
@@ -88,7 +89,14 @@ export default function MusicClient(props: MusicClientProps) {
   });
 
   const edges = data?.musicConnection?.edges ?? [];
-  const items = edges.map((e) => e?.node).filter(Boolean) as MusicNode[];
+  const items = edges
+    .map((e) => e?.node)
+    .filter(Boolean)
+    .sort((a, b) => {
+      const orderA = a?.order ?? Number.MAX_SAFE_INTEGER;
+      const orderB = b?.order ?? Number.MAX_SAFE_INTEGER;
+      return orderA - orderB;
+    }) as MusicNode[];
 
   return (
     <div className={styles.content}>

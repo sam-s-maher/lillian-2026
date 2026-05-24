@@ -16,10 +16,25 @@ export default {
       required: true,
     },
     {
-      type: "rich-text",
-      label: "Description",
-      name: "description",
-      required: true,
+      type: "object",
+      label: "Paragraphs",
+      name: "paragraphs",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item?.text?.substring(0, 50) + (item?.text?.length > 50 ? "..." : "") || "New Paragraph",
+        }),
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+          ui: {
+            component: "textarea",
+          },
+        },
+      ],
     },
   ],
 };

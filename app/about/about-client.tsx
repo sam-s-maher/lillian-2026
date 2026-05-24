@@ -1,8 +1,11 @@
 "use client";
 
-import { useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { useTina, tinaField } from "tinacms/dist/react";
 import Image from "next/image";
+
+interface Paragraph {
+  text?: string | null;
+}
 
 interface AboutClientProps {
   data: any;
@@ -25,6 +28,8 @@ export default function AboutClient({ data, query, variables }: AboutClientProps
     );
   }
 
+  const paragraphs: Paragraph[] = about.paragraphs ?? [];
+
   return (
     <div
       id="about-section"
@@ -41,8 +46,12 @@ export default function AboutClient({ data, query, variables }: AboutClientProps
           />
         </div>
       </div>
-      <div className="w-full lg:w-3/5">
-        <TinaMarkdown content={about.description} />
+      <div className="w-full lg:w-3/5 space-y-4">
+        {paragraphs.map((para, i) => (
+          <p key={i} data-tina-field={tinaField(about, `paragraphs.${i}.text`)}>
+            {para.text}
+          </p>
+        ))}
       </div>
     </div>
   );
