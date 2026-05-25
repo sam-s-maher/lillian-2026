@@ -128,7 +128,7 @@ a:hover, a.active {
 
 .section {
   scroll-margin-top: calc(var(--header-height) + 2rem);
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
 }
 
 .label-fade {
