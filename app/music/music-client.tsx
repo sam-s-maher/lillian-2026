@@ -7,10 +7,9 @@ import styles from "./music.module.css";
 interface BandcampEmbedProps {
   trackId: string;
   title: string;
-  bandcampUrl?: string | null;
 }
 
-function BandcampEmbed({ trackId, title, bandcampUrl }: BandcampEmbedProps) {
+function BandcampEmbed({ trackId, title }: BandcampEmbedProps) {
   const [loaded, setLoaded] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
 
@@ -55,9 +54,7 @@ function BandcampEmbed({ trackId, title, bandcampUrl }: BandcampEmbedProps) {
         seamless
         title={title}
         onLoad={() => setLoaded(true)}
-      >
-        {bandcampUrl && <a href={bandcampUrl}>{title}</a>}
-      </iframe>
+      />
     </div>
   );
 }
@@ -113,7 +110,6 @@ export default function MusicClient(props: MusicClientProps) {
               <BandcampEmbed
                 trackId={item.track_id}
                 title={item.title ?? `Track ${i + 1}`}
-                bandcampUrl={item.bandcamp_url}
               />
             </div>
           );
