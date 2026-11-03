@@ -1,3 +1,5 @@
+import { sanitizeFilename } from "./sanitize-filename";
+
 /**
  * @type {import('tinacms').Collection}
  */
@@ -5,6 +7,11 @@ export default {
   label: "Catalogue",
   name: "catalogue",
   path: "content/catalogue",
+  ui: {
+    filename: {
+      parse: sanitizeFilename,
+    },
+  },
   fields: [
     {
       type: "string",

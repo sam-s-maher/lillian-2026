@@ -1,3 +1,5 @@
+import { sanitizeFilename } from "./sanitize-filename";
+
 /**
  * @type {import('tinacms').Collection}
  */
@@ -7,6 +9,9 @@ export default {
   path: "content/gig",
   ui: {
     router: () => "/shows",
+    filename: {
+      parse: sanitizeFilename,
+    },
   },
   fields: [
     {
